@@ -1,9 +1,17 @@
 import React from "react";
+import axios from 'axios'
+import TotalUS from './TotalUS'
+import StatesSearch from "./StatesSearch";
 
 const HomePage = () => {
+
+
   return (
     <>
-      <div>Home Page</div>
+      <div>Home Page
+          <TotalUS/>
+          <StatesSearch/>
+      </div>
     </>
   );
 };
