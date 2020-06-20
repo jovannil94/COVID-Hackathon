@@ -4,43 +4,16 @@ import axios from "axios";
 
 const Chart = ({ stateHistory }) => {
   const [chartData, setChartData] = useState({});
-  const labelsFont = "'Cabin', sans-serif";
-  const labelsSize = 16;
-  const labelsColor = '#8c8d8c';
-  const ticksFont = "'Cabin'";
-  const ticksColor = '#606060';
 
-  //   -total hospitalizations
-  //   -total poscases
-  //   -total deaths
-  //   -total icu
-  //   -total recovered
-
-  // const getChartInfo = async () => {
-  //   let info = []
-  //   try {
-  //   //   let res = await axios.get(
-  //   //     "https://covidtracking.com/api/v1/us/daily.json"
-  //   //   );
-  //   let res = await axios.get(
-  //       "https://covidtracking.com/api/v1/states/ca/daily.json"
-  //     );
-  //       debugger;
-  //     // console.log(typeof res.data) => obj
-
-  //       info = res.data.slice(0,7).reverse()
-  //       console.log(info, "info")
   let date = [];
   let deathsArr = [];
 
-  
   console.log(stateHistory);
-  
+
   const getChartInfo = () => {
-    debugger;
-    for(const object of stateHistory){
-      date.push(object.date)
-      deathsArr.push(object.death)
+    for (const object of stateHistory) {
+      date.push(object.date);
+      deathsArr.push(object.death);
     }
   };
   useEffect(() => {
@@ -56,14 +29,11 @@ const Chart = ({ stateHistory }) => {
       ],
     });
   }, [stateHistory]);
-  
-
 
   return (
-    
     <>
       <div className="chart">
-      <Line data={chartData} />
+        <Line data={chartData} />
       </div>
     </>
   );

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Chart from "./Chart";
+import ChartHospital from "./ChartHospital";
+import ChartPositive from "./ChartPositive";
 import axios from "axios";
 
 const StatesSearch = () => {
@@ -86,7 +88,6 @@ const StatesSearch = () => {
       let resStateHistory = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/daily.json`
       );
-      // debugger;
 
       setPositive(resStateCurrent.data.positive);
       setRecovered(resStateCurrent.data.recovered);
@@ -98,26 +99,6 @@ const StatesSearch = () => {
       console.log(error);
     }
   };
-
-  // const info = () => {
-  //   debugger
-  //   for(const dataObject of stateStats) {
-  //     return (<li>Date{dataObject.date}</li>)
-  //   }
-  // }
-
-  // const info = stateStats.map((el, i) => {
-  //   debugger
-  //   return (
-  //       <div key={i}>
-  //         <li>Date{el.date}</li>
-  //         <li>Positive{el.positive}</li>
-  //         <li>Recovered{el.recovered}</li>
-  //         <li>hospitalizedCurrently{el.hospitalizedCurrently}</li>
-  //         <li> death{el.death}</li>
-  //       </div>
-  //   )
-  // })
 
   return (
     <div>
@@ -137,7 +118,11 @@ const StatesSearch = () => {
         <li>Death: {death}</li>
       </ul>
       <Chart stateHistory={stateHistory} />
+      <ChartHospital stateHistory={stateHistory} />
+      <ChartPositive stateHistory={stateHistory} />
     </div>
   );
 };
+
+
 export default StatesSearch;
