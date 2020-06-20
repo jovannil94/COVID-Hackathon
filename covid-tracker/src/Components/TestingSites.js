@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import TestingSitesIndex from './TestingSitesIndex';
+import TestingSitesIndex from './helper/TestingSitesIndex';
 import { useInputs } from "../util/InputHook";
 
 const TestingSites = () => {

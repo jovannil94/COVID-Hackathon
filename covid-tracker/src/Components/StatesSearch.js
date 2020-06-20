@@ -3,7 +3,8 @@ import Chart from "./Chart";
 import ChartHospital from "./ChartHospital";
 import ChartPositive from "./ChartPositive";
 import axios from "axios";
-import StateInfoIndex from "./StateInfoIndex";
+import StateInfoIndex from "./helper/StateInfoIndex";
+import NewsIndex from "./helper/NewsIndex";
 
 const StatesSearch = () => {
   const [stateHistory, setStateHistory] = useState([]);
@@ -114,6 +115,7 @@ const StatesSearch = () => {
         StatesSearch
       </form>
       <StateInfoIndex info={stateInfo}/>
+      <NewsIndex news={stateNews}/>
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
