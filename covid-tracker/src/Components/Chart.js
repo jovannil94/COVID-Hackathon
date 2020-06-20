@@ -4,6 +4,11 @@ import axios from "axios";
 
 const Chart = ({ stateHistory }) => {
   const [chartData, setChartData] = useState({});
+  const labelsFont = "'Cabin', sans-serif";
+  const labelsSize = 16;
+  const labelsColor = '#8c8d8c';
+  const ticksFont = "'Cabin'";
+  const ticksColor = '#606060';
 
   //   -total hospitalizations
   //   -total poscases
@@ -27,59 +32,38 @@ const Chart = ({ stateHistory }) => {
   //       console.log(info, "info")
   let date = [];
   let deathsArr = [];
+
+  
+  console.log(stateHistory);
+  
   const getChartInfo = () => {
     debugger;
-    stateHistory.map((state, i) => {
-      date.push(state.date);
-      deathsArr.push(state.death);
-    });
+    for(const object of stateHistory){
+      date.push(object.date)
+      deathsArr.push(object.death)
+    }
   };
-
-  console.log(stateHistory);
-
   useEffect(() => {
     getChartInfo();
     setChartData({
-      labels: date,
+      labels: date.reverse(),
       datasets: [
         {
           label: "Total US Deaths by Week",
-          data: deathsArr,
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
+          data: deathsArr,
         },
       ],
     });
-  }, []);
+  }, [stateHistory]);
+  
+
 
   return (
+    
     <>
       <div className="chart">
-        <Line
-          data={chartData}
-          options={{
-            responsive: true,
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    autoSkip: true,
-                    beginAtZero: true,
-                  },
-                  gridLines: {
-                    display: false,
-                  },
-                },
-              ],
-              xAxes: [
-                {
-                  gridLines: {
-                    display: false,
-                  },
-                },
-              ],
-            },
-          }}
-        />
+      <Line data={chartData} />
       </div>
     </>
   );
