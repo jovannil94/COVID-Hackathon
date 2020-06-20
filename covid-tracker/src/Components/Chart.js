@@ -14,6 +14,7 @@ const Chart = ({ stateHistory }) => {
     for (const object of stateHistory) {
       date.push(object.date);
       deathsArr.push(object.death);
+
     }
   };
   useEffect(() => {
