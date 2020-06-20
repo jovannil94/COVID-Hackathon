@@ -13,7 +13,7 @@ const StatesSearch = () => {
   const [death, setDeaths] = useState([]);
   const [hospitalized, setHospitalized] = useState([]);
   const [stateNews, setStateNews] = useState([]);
-  const [stateInfo, setStateInfo] = useState([])
+  const [stateInfo, setStateInfo] = useState([]);
   let allStates = [
     "al",
     "ak",
@@ -90,14 +90,16 @@ const StatesSearch = () => {
       let resStateHistory = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/daily.json`
       );
-        let resStateInfo = await axios.get(`https://covidtracking.com/api/v1/states/${chosenState}/info.json`);
+      let resStateInfo = await axios.get(
+        `https://covidtracking.com/api/v1/states/${chosenState}/info.json`
+      );
       setPositive(resStateCurrent.data.positive);
       setRecovered(resStateCurrent.data.recovered);
       setDeaths(resStateCurrent.data.death);
       setHospitalized(resStateCurrent.data.hospitalized);
       setStateNews(resStateNews.data.articles);
       setStateHistory(resStateHistory.data.slice(0, 7));
-      setStateInfo(resStateInfo.data)
+      setStateInfo(resStateInfo.data);
     } catch (error) {
       console.log(error);
     }
@@ -114,20 +116,21 @@ const StatesSearch = () => {
         </select>
         StatesSearch
       </form>
-      <StateInfoIndex info={stateInfo}/>
-      <NewsIndex news={stateNews}/>
+      <StateInfoIndex info={stateInfo} />
+      <NewsIndex news={stateNews} />
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
         <li>Hospitalized: {hospitalized}</li>
         <li>Death: {death}</li>
       </ul>
-      <Chart stateHistory={stateHistory} />
-      <ChartHospital stateHistory={stateHistory} />
-      <ChartPositive stateHistory={stateHistory} />
+      <div>
+        <Chart stateHistory={stateHistory} />
+        <ChartHospital stateHistory={stateHistory} />
+        <ChartPositive stateHistory={stateHistory} />
+      </div>
     </div>
   );
 };
-
 
 export default StatesSearch;
