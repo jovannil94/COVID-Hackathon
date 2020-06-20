@@ -20,13 +20,13 @@ const TotalUS = () => {
 
 const info = totals.map((el, i) => {
     return (
-        <>
-    <li key={i}>Date{el.date}</li>
-    <li key={i}>Positive{el.positive}</li>
-    <li key={i}>Recovered{el.recovered}</li>
-    <li key={i}>hospitalizedCurrently{el.hospitalizedCurrently}</li>
-    <li key={i}> death{el.death}</li>
-    </>
+        <div key={i}>
+          <li>Date{el.date}</li>
+          <li>Positive{el.positive}</li>
+          <li>Recovered{el.recovered}</li>
+          <li>hospitalizedCurrently{el.hospitalizedCurrently}</li>
+          <li> death{el.death}</li>
+        </div>
     )
 
 
