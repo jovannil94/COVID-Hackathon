@@ -37,7 +37,6 @@ const Chart = ({ stateHistory }) => {
   console.log(stateHistory);
   
   const getChartInfo = () => {
-    debugger;
     for(const object of stateHistory){
       date.push(object.date)
       deathsArr.push(object.death)
