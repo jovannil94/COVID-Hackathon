@@ -99,26 +99,6 @@ const StatesSearch = () => {
     }
   };
 
-  // const info = () => {
-  //   debugger
-  //   for(const dataObject of stateStats) {
-  //     return (<li>Date{dataObject.date}</li>)
-  //   }
-  // }
-
-  // const info = stateStats.map((el, i) => {
-  //   debugger
-  //   return (
-  //       <div key={i}>
-  //         <li>Date{el.date}</li>
-  //         <li>Positive{el.positive}</li>
-  //         <li>Recovered{el.recovered}</li>
-  //         <li>hospitalizedCurrently{el.hospitalizedCurrently}</li>
-  //         <li> death{el.death}</li>
-  //       </div>
-  //   )
-  // })
-
   return (
     <div>
       <form onChange={fetchData}>
