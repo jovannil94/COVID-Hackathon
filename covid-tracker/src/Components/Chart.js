@@ -46,80 +46,24 @@ const Chart = ({ stateHistory }) => {
   useEffect(() => {
     getChartInfo();
     setChartData({
-      labels: date,
+      labels: date.reverse(),
       datasets: [
         {
           label: "Total US Deaths by Week",
-          data: deathsArr,
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
+          data: deathsArr,
         },
       ],
     });
-  }, []);
-  const options = {
-    animation: {
-        duration: 0 // general animation time
-    },
-    scales: {
-        yAxes: [{
-                scaleLabel: {
-                    display: true,
-                    // labelString: yText,
-                    fontFamily: labelsFont,
-                    fontSize: labelsSize,
-                    fontColor: labelsColor
-                },
-                ticks: {
-                    fontFamily: ticksFont,
-                    fontColor: ticksColor,
-                    beginAtZero: true
-                },
-                gridLines:{
-                    color: '#111'
-                }
-        }],
-        xAxes: [{
-                scaleLabel: {
-                    display: true,
-                    // labelString: xText,
-                    fontFamily: labelsFont,
-                    fontSize: labelsSize,
-                    fontColor: labelsColor
-                },
-                ticks: {
-                    fontFamily: ticksFont,
-                    fontSize: 10,
-                    fontColor: ticksColor,
-                    beginAtZero: true
-                },
-                gridLines:{
-                    color: '#111'
-                }
-        }]
-    },
-    // title: {
-    //     display: true,
-    //     text: title,
-    //     fontSize: 1,
-    //     fontColor: '#9c9c9c'
-    // },
-    legend: {
-        display: false,
-        position: 'top',
-        labels: {
-            fontColor: '#9c9c9c'
-        }   
-    },
-    datalabels: {
-        display: true,
-        fontColor: '#9c9c9c',
-    }
-};
+  }, [stateHistory]);
+  
+
 
   return (
+    
     <>
       <div className="chart">
-      <Bar data={chartData} options={options} />
+      <Line data={chartData} />
       </div>
     </>
   );
