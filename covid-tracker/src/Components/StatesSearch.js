@@ -117,7 +117,7 @@ const StatesSearch = () => {
         StatesSearch
       </form>
       <StateInfoIndex info={stateInfo} />
-      <NewsIndex news={stateNews} />
+      {/* <NewsIndex news={stateNews} /> */}
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
