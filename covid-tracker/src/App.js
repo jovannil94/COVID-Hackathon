@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Homepage from "../src/Components/HomePage";
-import TestingSites from "../src/Components/TestingSites";
-import NavBar from "../src/Components/NavBar";
-import Footer from "../src/Components/Footer";
+import HomePage from "./Components/HomePage";
+import TestingSites from "./Components/TestingSites";
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 import "./App.css";
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
       COVID TRACKER
       <NavBar />
       <Switch>
-        <Route component={Homepage} />
-        <Route component={Footer} />
-        <Route component={TestingSites} />
+        <Route exact path={"/"} component={HomePage} />
+        <Route exact path={"/testingsites"} component={TestingSites}/>
       </Switch>
+      <Footer />
     </div>
   );
 }
