@@ -1,9 +1,15 @@
 import React from "react";
+import axios from 'axios'
+import TotalUS from './TotalUS'
 
 const HomePage = () => {
+
+
   return (
     <>
-      <div>Home Page</div>
+      <div>Home Page
+          <TotalUS/>
+      </div>
     </>
   );
 };
