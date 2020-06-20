@@ -4,6 +4,11 @@ import axios from "axios";
 
 const Chart = ({ stateHistory }) => {
   const [chartData, setChartData] = useState({});
+  const labelsFont = "'Cabin', sans-serif";
+  const labelsSize = 16;
+  const labelsColor = '#8c8d8c';
+  const ticksFont = "'Cabin'";
+  const ticksColor = '#606060';
 
   //   -total hospitalizations
   //   -total poscases
@@ -27,16 +32,17 @@ const Chart = ({ stateHistory }) => {
   //       console.log(info, "info")
   let date = [];
   let deathsArr = [];
+
+  
+  console.log(stateHistory);
+  
   const getChartInfo = () => {
     debugger;
-    stateHistory.map((state, i) => {
-      date.push(state.date);
-      deathsArr.push(state.death);
-    });
+    for(const object of stateHistory){
+      date.push(object.date)
+      deathsArr.push(object.death)
+    }
   };
-
-  console.log(stateHistory);
-
   useEffect(() => {
     getChartInfo();
     setChartData({
@@ -50,36 +56,70 @@ const Chart = ({ stateHistory }) => {
       ],
     });
   }, []);
+  const options = {
+    animation: {
+        duration: 0 // general animation time
+    },
+    scales: {
+        yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    // labelString: yText,
+                    fontFamily: labelsFont,
+                    fontSize: labelsSize,
+                    fontColor: labelsColor
+                },
+                ticks: {
+                    fontFamily: ticksFont,
+                    fontColor: ticksColor,
+                    beginAtZero: true
+                },
+                gridLines:{
+                    color: '#111'
+                }
+        }],
+        xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    // labelString: xText,
+                    fontFamily: labelsFont,
+                    fontSize: labelsSize,
+                    fontColor: labelsColor
+                },
+                ticks: {
+                    fontFamily: ticksFont,
+                    fontSize: 10,
+                    fontColor: ticksColor,
+                    beginAtZero: true
+                },
+                gridLines:{
+                    color: '#111'
+                }
+        }]
+    },
+    // title: {
+    //     display: true,
+    //     text: title,
+    //     fontSize: 1,
+    //     fontColor: '#9c9c9c'
+    // },
+    legend: {
+        display: false,
+        position: 'top',
+        labels: {
+            fontColor: '#9c9c9c'
+        }   
+    },
+    datalabels: {
+        display: true,
+        fontColor: '#9c9c9c',
+    }
+};
 
   return (
     <>
       <div className="chart">
-        <Line
-          data={chartData}
-          options={{
-            responsive: true,
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    autoSkip: true,
-                    beginAtZero: true,
-                  },
-                  gridLines: {
-                    display: false,
-                  },
-                },
-              ],
-              xAxes: [
-                {
-                  gridLines: {
-                    display: false,
-                  },
-                },
-              ],
-            },
-          }}
-        />
+      <Bar data={chartData} options={options} />
       </div>
     </>
   );
