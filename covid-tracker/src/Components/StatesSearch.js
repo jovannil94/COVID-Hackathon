@@ -3,6 +3,7 @@ import Chart from "./Chart";
 import ChartHospital from "./ChartHospital";
 import ChartPositive from "./ChartPositive";
 import axios from "axios";
+import StateInfoIndex from "./StateInfoIndex";
 
 const StatesSearch = () => {
   const [stateHistory, setStateHistory] = useState([]);
@@ -11,6 +12,7 @@ const StatesSearch = () => {
   const [death, setDeaths] = useState([]);
   const [hospitalized, setHospitalized] = useState([]);
   const [stateNews, setStateNews] = useState([]);
+  const [stateInfo, setStateInfo] = useState([])
   let allStates = [
     "al",
     "ak",
@@ -84,17 +86,17 @@ const StatesSearch = () => {
       let resStateNews = await axios.get(
         `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenStateUC}&max=5&token=90a1d988b1cd61c30c70f0348f6b81d3`
       );
-
       let resStateHistory = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/daily.json`
       );
-
+        let resStateInfo = await axios.get(`https://covidtracking.com/api/v1/states/${chosenState}/info.json`);
       setPositive(resStateCurrent.data.positive);
       setRecovered(resStateCurrent.data.recovered);
       setDeaths(resStateCurrent.data.death);
       setHospitalized(resStateCurrent.data.hospitalized);
       setStateNews(resStateNews.data.articles);
       setStateHistory(resStateHistory.data.slice(0, 7));
+      setStateInfo(resStateInfo.data)
     } catch (error) {
       console.log(error);
     }
@@ -111,6 +113,7 @@ const StatesSearch = () => {
         </select>
         StatesSearch
       </form>
+      <StateInfoIndex info={stateInfo}/>
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
