@@ -7,18 +7,6 @@ $mandarin: #ef7b45ff; => ORANGE
 $vermilion: #d84727ff; => RED-ORANGE
 */
 
-.chart {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  width: min-content;
-  height: auto;
-  box-shadow: 1px 1px 1px 1px #4292d9;
+.stateSearchMainDiv {
   margin-bottom: 10em;
-  margin-top: 3em;
-  background-color: white;
-}
-
-.chartEach {
-  padding: 2em;
 }

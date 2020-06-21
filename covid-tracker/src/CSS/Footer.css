@@ -1,0 +1,23 @@
+/*COLOR PALLETTE
+    (SCSS HEX) 
+$rich-black: #042a2bff; => VERY DARK GREEN
+$maximum-blue: #5eb1bfff; => AQUAMARINE
+$light-cyan: #cdedf6ff; => LIGHT BLUE
+$mandarin: #ef7b45ff; => ORANGE
+$vermilion: #d84727ff; => RED-ORANGE
+*/
+
+.footer {
+    display: flex;
+    flex-flow: row;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color:rgb(127, 213, 236);
+    box-shadow: 0px 5px 5px 5px#4292d9;
+    align-items: center;
+    height: 50px;
+  }

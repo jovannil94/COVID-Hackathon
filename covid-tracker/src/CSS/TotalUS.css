@@ -21,7 +21,8 @@ $vermilion: #d84727ff; => RED-ORANGE
   width: fit-content;
   padding: 2em;
   margin-left: 2em;
-  background-color: rgba(137, 215, 236, 0.639);
+  /* background-color: rgba(137, 215, 236, 0.639); */
+  background-color: white;
   box-shadow: 3px 3px 3px #4292d9;
 }
 

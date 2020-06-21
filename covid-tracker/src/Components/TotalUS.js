@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/TotalUS.css";
 import usMap from "../Images/usMap.png";
-import NumberFormat from "react-number-format";
 
 const TotalUS = () => {
   const [totals, setTotals] = useState([]);
@@ -20,11 +19,10 @@ const TotalUS = () => {
     }
   };
 
-  // <li>Date: <NumberFormat value={el.date} displayType={'text'} thousandSeparator={true}/></li>
-
   const info = totals.map((el, i) => {
     return (
       <div className="usTotalsDiv" key={i}>
+        <h1 className="usStatsli">Current US Totals</h1>
         <li className="usStatsli">
           <p className="usP">Date:</p> {el.date}
         </li>
@@ -36,7 +34,8 @@ const TotalUS = () => {
           <p className="usP">Recovered:</p> {el.recovered.toLocaleString()}
         </li>
         <li className="usStatsli">
-          <p className="usP">Hospitalized:</p> {el.hospitalized.toLocaleString()}
+          <p className="usP">Hospitalized:</p>{" "}
+          {el.hospitalized.toLocaleString()}
         </li>
         <li className="usStatsli">
           <p className="usP">Deaths:</p>
