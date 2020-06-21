@@ -5,6 +5,7 @@ import ChartPositive from "./ChartPositive";
 import axios from "axios";
 import StateInfoIndex from "./helper/StateInfoIndex";
 import NewsIndex from "./helper/NewsIndex";
+import "../CSS/StatesSearch.css";
 
 const StatesSearch = () => {
   const [stateHistory, setStateHistory] = useState([]);
@@ -93,10 +94,10 @@ const StatesSearch = () => {
       let resStateInfo = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/info.json`
       );
-      setPositive(resStateCurrent.data.positive);
-      setRecovered(resStateCurrent.data.recovered);
-      setDeaths(resStateCurrent.data.death);
-      setHospitalized(resStateCurrent.data.hospitalized);
+      setPositive(resStateCurrent.data.positive.toLocaleString());
+      setRecovered(resStateCurrent.data.recovered.toLocaleString());
+      setDeaths(resStateCurrent.data.death.toLocaleString());
+      setHospitalized(resStateCurrent.data.hospitalized.toLocaleString());
       setStateNews(resStateNews.data.articles);
       setStateHistory(resStateHistory.data.slice(0, 7));
       setStateInfo(resStateInfo.data);
@@ -108,23 +109,22 @@ const StatesSearch = () => {
   return (
     <div>
       <form onChange={fetchData}>
-        <select>
+        <select className="selectState">
           <option value="" hidden>
             Select A State
           </option>
           {populateSelect}
         </select>
-        StatesSearch
       </form>
       <StateInfoIndex info={stateInfo} />
       <NewsIndex news={stateNews} />
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
-        <li>Hospitalized: {hospitalized}</li>
+        <li>Hospitalized: {hospitalized.toLocaleString()}</li>
         <li>Death: {death}</li>
       </ul>
-      <div>
+      <div className="chart">
         <Chart stateHistory={stateHistory} />
         <ChartHospital stateHistory={stateHistory} />
         <ChartPositive stateHistory={stateHistory} />

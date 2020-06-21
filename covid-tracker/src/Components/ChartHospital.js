@@ -38,7 +38,7 @@ const ChartHospital = ({ stateHistory }) => {
 
   return (
     <>
-      <div className="chart">
+      <div className="chartEach">
         <Line data={chartData} />
       </div>
     </>

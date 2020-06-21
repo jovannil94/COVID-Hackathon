@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
 import axios from "axios";
+import "../CSS/Chart.css";
 
 const Chart = ({ stateHistory }) => {
   const [chartData, setChartData] = useState({});
@@ -14,7 +15,6 @@ const Chart = ({ stateHistory }) => {
     for (const object of stateHistory) {
       date.push(object.date);
       deathsArr.push(object.death);
-
     }
   };
   useEffect(() => {
@@ -33,7 +33,7 @@ const Chart = ({ stateHistory }) => {
 
   return (
     <>
-      <div className="chart">
+      <div className="chartEach">
         <Line data={chartData} />
       </div>
     </>

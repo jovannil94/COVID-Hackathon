@@ -1,0 +1,46 @@
+/*COLOR PALLETTE
+    (SCSS HEX) 
+$rich-black: #042a2bff; => VERY DARK GREEN
+$maximum-blue: #5eb1bfff; => AQUAMARINE
+$light-cyan: #cdedf6ff; => LIGHT BLUE
+$mandarin: #ef7b45ff; => ORANGE
+$vermilion: #d84727ff; => RED-ORANGE
+*/
+
+.UStotalsMap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 3em;
+  margin-left: 10em;
+  /* width: 100vw; */
+}
+
+.usTotalsDiv {
+  border: 1px #ef7b45ff solid;
+  width: fit-content;
+  padding: 2em;
+  margin-left: 2em;
+  background-color: rgba(137, 215, 236, 0.639);
+  box-shadow: 3px 3px 3px #4292d9;
+}
+
+.usP {
+  font-weight: 550;
+  font-size: 20pt;
+  color: #042a2bff;
+  padding-bottom: 0.5em;
+}
+
+.usStatsli {
+  font-weight: 400;
+  font-size: 25pt;
+  color: #d84727ff;
+  padding-bottom: 1em;
+}
+
+#homeImageDiv {
+  padding-top: 5em;
+  height: auto;
+  width: 100%;
+}
