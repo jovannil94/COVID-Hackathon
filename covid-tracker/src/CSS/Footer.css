@@ -23,14 +23,14 @@ $vermilion: #d84727ff; => RED-ORANGE
   }
     
 
-  footer nav {
+  .footer nav {
     /* float: left; */
     display: flex;
     /* align-items: center; */
     justify-content: center;
     /* align-items: center; */
   }
-  footer a {
+  .footer a {
     display: block;
     color: rgb(252, 81, 2);
     text-align: center;
