@@ -8,6 +8,8 @@ import NewsIndex from "./helper/NewsIndex";
 import "../CSS/StatesSearch.css";
 
 const StatesSearch = () => {
+  let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3"
+  let APIKey2 = "742e2d633e526b44485af3140a00513e"
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
   const [recovered, setRecovered] = useState([]);
@@ -86,7 +88,7 @@ const StatesSearch = () => {
         `https://covidtracking.com/api/v1/states/${chosenState}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenStateUC}&max=5&token=90a1d988b1cd61c30c70f0348f6b81d3`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenStateUC}&max=5&token=${APIKey2}`
       );
       let resStateHistory = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/daily.json`
@@ -117,7 +119,7 @@ const StatesSearch = () => {
         </select>
       </form>
       <StateInfoIndex info={stateInfo} />
-      <NewsIndex news={stateNews} />
+      <NewsIndex news={stateNews}/>
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
