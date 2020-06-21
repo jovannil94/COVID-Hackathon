@@ -3,7 +3,7 @@ import '../CSS/About.css'
 const About = () => {
   return (
     <>
-      <div>About Covid Near Us
+      <div className="paragraph">About Covid Near Us
           <p>
           Problem
 Describe a clear app purpose and how it release to them
