@@ -3,9 +3,10 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import TestingSites from "./Components/TestingSites";
 import NavBar from "./Components/NavBar";
+import StatesSearch from "./Components/StatesSearch";
 import Footer from "./Components/Footer";
-import About from './Components/About'
-import Bio from './Components/Bio'
+import About from "./Components/About";
+import Bio from "./Components/Bio";
 import "./App.css";
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
       <Switch>
         <Route exact path={"/"} component={HomePage} />
         <Route exact path={"/testingsites"} component={TestingSites} />
-        
-        <Route exact path={"/about"} component={About}/>
-        <Route exact path={'/bio'} component={Bio}/>
+        <Route exact path={"/:chosen"} component={StatesSearch} />
+        <Route exact path={"/about"} component={About} />
+        <Route exact path={"/bio"} component={Bio} />
       </Switch>
       <Footer />
     </div>
