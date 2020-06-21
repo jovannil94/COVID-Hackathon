@@ -7,6 +7,7 @@ import TwitterFeed from "./helper/TwitterFeed";
 const TotalUS = () => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
+  let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
   const [totals, setTotals] = useState([]);
   const [usNews, setUsNews] = useState([]);
 
@@ -16,11 +17,12 @@ const TotalUS = () => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=5&token=${APIKey2}`
-      ); 
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey3}`
+      );
+
       let data = response.data;
       setTotals(data);
-      setUsNews(resUSNews.data.articles)
+      setUsNews(resUSNews.data.articles);
     } catch (error) {
       console.log(error);
     }
@@ -57,12 +59,17 @@ const TotalUS = () => {
   }, []);
 
   return (
-    <div className="UStotalsMap">
-      <div>
-        <ul>{info}</ul>
+    <div>
+      <h2>Get The Latest US Covid Information in the US</h2>
+      <div className="UStotalsMap">
+        <div>
+          <ul>{info}</ul>
+        </div>
+        <div className="usFeedNews">
+          <NewsIndex news={usNews} />
+          <TwitterFeed handle={"@CDCgov"} />
+        </div>{" "}
       </div>
-      <NewsIndex news={usNews}/>
-      <TwitterFeed handle={"@CDCgov"}/>
     </div>
   );
 };

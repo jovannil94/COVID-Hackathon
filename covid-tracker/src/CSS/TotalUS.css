@@ -8,12 +8,20 @@ $vermilion: #d84727ff; => RED-ORANGE
 */
 
 .UStotalsMap {
+  margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding-top: 3em;
-  margin-left: 10em;
+  justify-content: space-evenly;
+  padding: 2em 6em 6em 6em;
+  
   /* width: 100vw; */
+}
+
+.usFeedNews {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  overflow: scroll;
 }
 
 .usTotalsDiv {
@@ -21,7 +29,6 @@ $vermilion: #d84727ff; => RED-ORANGE
   width: fit-content;
   padding: 2em;
   margin-left: 2em;
-  /* background-color: rgba(137, 215, 236, 0.639); */
   background-color: white;
   box-shadow: 3px 3px 3px #4292d9;
 }
