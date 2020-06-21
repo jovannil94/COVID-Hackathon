@@ -3,18 +3,20 @@ import { NavLink } from "react-router-dom";
 import HomePage from "./HomePage";
 import TestingSites from "./TestingSites";
 import "../CSS/NavBar.css";
-import logo from "../Images/ourLogo.png"
+import logo from "../Images/ourLogo.png";
 
 const NavBar = () => {
   return (
     <>
       <div>
-        <nav>
-        <img id="ourLogo" src={logo} alt="logo" />
-          <NavLink exact to={"/"}>
-            HomePage
-          </NavLink>
-          <NavLink to={"/testingsites"}>Testing Sites</NavLink>
+        <nav className="navNarnav">
+          <img id="ourLogo" src={logo} alt="logo" />
+          <div className="navBarLinks">
+            <NavLink className="navBarLinks" exact to={"/"}>
+              HomePage
+            </NavLink>
+            <NavLink className="navBarLinks" to={"/testingsites"}>Testing Sites</NavLink>
+          </div>{" "}
         </nav>
       </div>
     </>

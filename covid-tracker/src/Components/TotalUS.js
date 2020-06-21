@@ -53,9 +53,9 @@ const TotalUS = () => {
       <div>
         <ul>{info}</ul>
       </div>
-      <div id="homeImageDiv">
+      {/* <div id="homeImageDiv">
         <img src={usMap} alt="US map" />
-      </div>
+      </div> */}
     </div>
   );
 };
