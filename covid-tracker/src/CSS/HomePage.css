@@ -12,3 +12,9 @@ $vermilion: #d84727ff; => RED-ORANGE
     display: flex;
     flex-direction: row;
 } */
+
+.header {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #5eb1bfff;
+}

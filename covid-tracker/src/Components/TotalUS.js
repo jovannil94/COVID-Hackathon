@@ -59,17 +59,14 @@ const TotalUS = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Get The Latest US Covid Information in the US</h2>
-      <div className="UStotalsMap">
-        <div>
-          <ul>{info}</ul>
-        </div>
-        <div className="usFeedNews">
-          <NewsIndex news={usNews} />
-          <TwitterFeed handle={"@CDCgov"} />
-        </div>{" "}
+    <div className="UStotalsMap">
+      <div>
+        <ul>{info}</ul>
       </div>
+      <div className="usFeedNews">
+        <NewsIndex news={usNews} />
+        <TwitterFeed handle={"@CDCgov"} />
+      </div>{" "}
     </div>
   );
 };
