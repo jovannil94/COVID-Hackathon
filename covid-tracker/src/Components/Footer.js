@@ -1,8 +1,10 @@
-import React from 'react';
+
+import React from "react";
+import "../CSS/Footer.css";
+
 // import { Grid, Nav, NavItem } from 'react-bootstrap';
 
-function Footer(/*props*/) {
-  return (
+
     <div className="footer">Footer</div>
     // <footer>
     //   <Grid>
@@ -27,6 +29,7 @@ function Footer(/*props*/) {
     //     </div>
     //   </Grid>
     // </footer>
+
   );
 }
 

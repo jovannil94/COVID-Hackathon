@@ -14,7 +14,7 @@ nav {
   justify-content: space-between;
   border-bottom: 3px solid #cdedf6ff;
   text-align: center;
-  position: sticky;
+  position: static;
   top: 0;
   background-color: rgb(127, 213, 236);
   box-shadow: 3px 3px 3px #4292d9;

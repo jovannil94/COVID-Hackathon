@@ -3,6 +3,7 @@ import axios from "axios";
 import TestingSitesIndex from "./helper/TestingSitesIndex";
 import { useInputs } from "../util/InputHook";
 import ourLogo from "../Images/ourLogo.png";
+import "../CSS/TestingSites.css";
 
 const TestingSites = () => {
   const address = useInputs("");
@@ -40,11 +41,18 @@ const TestingSites = () => {
   return (
     <div className="Container">
       <img src={ourLogo} alt="logo" />
-      <form onSubmit={handleForm}>
-        <input type="text" {...address} />
-        <input type="submit" value="Search for Testing Sites" />
-      </form>
-      <TestingSitesIndex sites={testing} />
+      <div>
+        <form className="testingForm" onSubmit={handleForm}>
+          <div className="addressLabel">
+            <label>Enter address or zip code</label>
+            <input id="addressInput" type="text" {...address} />
+          </div>
+          <input type="submit" value="Search for Testing Sites" />
+        </form>
+        <div>
+          <TestingSitesIndex sites={testing} />
+        </div>
+      </div>
     </div>
   );
 };

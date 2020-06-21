@@ -107,7 +107,7 @@ const StatesSearch = () => {
   };
 
   return (
-    <div>
+    <div className="stateSearchMainDiv">
       <form onChange={fetchData}>
         <select className="selectState">
           <option value="" hidden>

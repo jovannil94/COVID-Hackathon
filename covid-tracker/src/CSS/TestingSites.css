@@ -1,0 +1,20 @@
+.container {
+  margin: auto;
+  
+}
+
+.testingForm {
+  padding: 1em;
+}
+
+.addressLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+#addressInput {
+  margin: auto;
+  width: 12em;
+  margin-bottom: 5px;
+}
