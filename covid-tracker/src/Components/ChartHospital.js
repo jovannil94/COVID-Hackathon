@@ -16,7 +16,6 @@ const ChartHospital = ({ stateHistory }) => {
   console.log(stateHistory);
 
   const getChartInfo = () => {
-    // debugger;
     for (const object of stateHistory) {
       date.push(object.date);
       hospitalArr.push(object.hospitalizedCurrently);
