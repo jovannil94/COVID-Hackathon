@@ -7,7 +7,7 @@ $mandarin: #ef7b45ff; => ORANGE
 $vermilion: #d84727ff; => RED-ORANGE
 */
 
-.footer {
+footer {
     display: flex;
     flex-flow: row;
     position: fixed;
@@ -21,3 +21,20 @@ $vermilion: #d84727ff; => RED-ORANGE
     align-items: center;
     height: 50px;
   }
+    
+
+  footer nav {
+    /* float: left; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* align-items: center; */
+  }
+  footer a {
+    display: block;
+    color: rgb(252, 81, 2);
+    text-align: center;
+    padding: 7px 16px;
+    text-decoration: none;
+  }
+  
