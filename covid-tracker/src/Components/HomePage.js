@@ -1,18 +1,21 @@
-import React from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import TotalUS from "./TotalUS";
 import StatesSearch from "./StatesSearch";
 
 import "../CSS/HomePage.css";
 
 const HomePage = () => {
+  const [selectedState, setselectedState] = useState([]);
+
+  const fetchState = (chosen) =>{
+    setselectedState(chosen)
+  }
+
   return (
     <>
       <div className="homeDivMain">
-       
-
-        <TotalUS />
-        <StatesSearch />
+        <TotalUS fetchState={fetchState} />
+        <StatesSearch selectedState={selectedState} />
       </div>
     </>
   );

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/TotalUS.css";
 import NewsIndex from "./helper/NewsIndex";
+import ReactDOM from "react-dom";
 import TwitterFeed from "./helper/TwitterFeed";
+import MapChart from "./MapChart";
 
-const TotalUS = () => {
+const TotalUS = ({fetchState}) => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   const [totals, setTotals] = useState([]);
@@ -58,10 +60,13 @@ const TotalUS = () => {
 
   return (
     <div className="UStotalsMap">
-      <div>
+      <div className="info">
         <ul>{info}</ul>
       </div>
-      <NewsIndex news={usNews}/>
+      <div className="interactiveMap">
+        <MapChart fetchState={fetchState}/>
+      </div>
+      {/* <NewsIndex news={usNews}/> */}
       <TwitterFeed handle={"@CDCgov"}/>
     </div>
   );

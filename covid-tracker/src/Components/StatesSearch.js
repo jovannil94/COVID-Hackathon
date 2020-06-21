@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "./Chart";
 import ChartHospital from "./ChartHospital";
 import ChartPositive from "./ChartPositive";
@@ -8,7 +8,7 @@ import NewsIndex from "./helper/NewsIndex";
 import "../CSS/StatesSearch.css";
 import TwitterFeed from "./helper/TwitterFeed";
 
-const StatesSearch = () => {
+const StatesSearch = ({selectedState}) => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   const [stateHistory, setStateHistory] = useState([]);
@@ -18,84 +18,84 @@ const StatesSearch = () => {
   const [hospitalized, setHospitalized] = useState([]);
   const [stateNews, setStateNews] = useState([]);
   const [stateInfo, setStateInfo] = useState([]);
-  let allStates = [
-    "al",
-    "ak",
-    "az",
-    "ar",
-    "ca",
-    "co",
-    "ct",
-    "de",
-    "fl",
-    "ga",
-    "hi",
-    "id",
-    "il",
-    "in",
-    "ia",
-    "ks",
-    "ky",
-    "la",
-    "me",
-    "md",
-    "ma",
-    "mi",
-    "mn",
-    "ms",
-    "mo",
-    "mt",
-    "ne",
-    "nv",
-    "nh",
-    "nj",
-    "nm",
-    "ny",
-    "nc",
-    "nd",
-    "oh",
-    "ok",
-    "or",
-    "pa",
-    "ri",
-    "sc",
-    "sd",
-    "tn",
-    "tx",
-    "ut",
-    "vt",
-    "va",
-    "wa",
-    "wv",
-    "wi",
-    "wy",
-  ];
+  // let allStates = [
+  //   "al",
+  //   "ak",
+  //   "az",
+  //   "ar",
+  //   "ca",
+  //   "co",
+  //   "ct",
+  //   "de",
+  //   "fl",
+  //   "ga",
+  //   "hi",
+  //   "id",
+  //   "il",
+  //   "in",
+  //   "ia",
+  //   "ks",
+  //   "ky",
+  //   "la",
+  //   "me",
+  //   "md",
+  //   "ma",
+  //   "mi",
+  //   "mn",
+  //   "ms",
+  //   "mo",
+  //   "mt",
+  //   "ne",
+  //   "nv",
+  //   "nh",
+  //   "nj",
+  //   "nm",
+  //   "ny",
+  //   "nc",
+  //   "nd",
+  //   "oh",
+  //   "ok",
+  //   "or",
+  //   "pa",
+  //   "ri",
+  //   "sc",
+  //   "sd",
+  //   "tn",
+  //   "tx",
+  //   "ut",
+  //   "vt",
+  //   "va",
+  //   "wa",
+  //   "wv",
+  //   "wi",
+  //   "wy",
+  // ];
 
-  const populateSelect = allStates.map((state, i) => {
-    return (
-      <option key={i} value={state}>
-        {" "}
-        {state.toUpperCase()}
-      </option>
-    );
-  });
+  // const populateSelect = allStates.map((state, i) => {
+  //   return (
+  //     <option key={i} value={state}>
+  //       {" "}
+  //       {state.toUpperCase()}
+  //     </option>
+  //   );
+  // });
 
-  const fetchData = async (e) => {
-    e.preventDefault();
-    let chosenState = e.target.value;
-    let chosenStateUC = chosenState.toUpperCase();
+  const fetchData = async (state) => {
+    let chosenStateLC = state.toLowerCase();
+    let chosenState = state
+    debugger
     try {
       let resStateCurrent = await axios.get(
-        `https://covidtracking.com/api/v1/states/${chosenState}/current.json`
+        `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenStateUC}&max=5&token=${APIKey2}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey2}`
       );
       let resStateHistory = await axios.get(
-        `https://covidtracking.com/api/v1/states/${chosenState}/daily.json`
+        `https://covidtracking.com/api/v1/states/${chosenStateLC}/daily.json`
       );
       let resStateInfo = await axios.get(
-        `https://covidtracking.com/api/v1/states/${chosenState}/info.json`
+        `https://covidtracking.com/api/v1/states/${chosenStateLC}/info.json`
       );
       setPositive(resStateCurrent.data.positive.toLocaleString());
       setRecovered(resStateCurrent.data.recovered.toLocaleString());
@@ -109,18 +109,24 @@ const StatesSearch = () => {
     }
   };
 
+  useEffect(() => {
+    if (selectedState.length > 0) {
+      fetchData(selectedState)
+    }
+  }, [selectedState])
+
   return (
     <div className="stateSearchMainDiv">
-      <form onChange={fetchData}>
+      {/* <form onChange={fetchData}>
         <select className="selectState">
           <option value="" hidden>
             Select A State
           </option>
           {populateSelect}
         </select>
-      </form>
+      </form> */}
       <StateInfoIndex info={stateInfo}/>
-      <NewsIndex news={stateNews}/>
+      {/* <NewsIndex news={stateNews}/> */}
       <TwitterFeed handle={stateInfo.twitter}/>
       <ul>
         <li>Positive: {positive}</li>
