@@ -18,67 +18,6 @@ const StatesSearch = ({selectedState}) => {
   const [hospitalized, setHospitalized] = useState([]);
   const [stateNews, setStateNews] = useState([]);
   const [stateInfo, setStateInfo] = useState([]);
-  // let allStates = [
-  //   "al",
-  //   "ak",
-  //   "az",
-  //   "ar",
-  //   "ca",
-  //   "co",
-  //   "ct",
-  //   "de",
-  //   "fl",
-  //   "ga",
-  //   "hi",
-  //   "id",
-  //   "il",
-  //   "in",
-  //   "ia",
-  //   "ks",
-  //   "ky",
-  //   "la",
-  //   "me",
-  //   "md",
-  //   "ma",
-  //   "mi",
-  //   "mn",
-  //   "ms",
-  //   "mo",
-  //   "mt",
-  //   "ne",
-  //   "nv",
-  //   "nh",
-  //   "nj",
-  //   "nm",
-  //   "ny",
-  //   "nc",
-  //   "nd",
-  //   "oh",
-  //   "ok",
-  //   "or",
-  //   "pa",
-  //   "ri",
-  //   "sc",
-  //   "sd",
-  //   "tn",
-  //   "tx",
-  //   "ut",
-  //   "vt",
-  //   "va",
-  //   "wa",
-  //   "wv",
-  //   "wi",
-  //   "wy",
-  // ];
-
-  // const populateSelect = allStates.map((state, i) => {
-  //   return (
-  //     <option key={i} value={state}>
-  //       {" "}
-  //       {state.toUpperCase()}
-  //     </option>
-  //   );
-  // });
 
   const fetchData = async (state) => {
     let chosenStateLC = state.toLowerCase();
@@ -117,14 +56,6 @@ const StatesSearch = ({selectedState}) => {
 
   return (
     <div className="stateSearchMainDiv">
-      {/* <form onChange={fetchData}>
-        <select className="selectState">
-          <option value="" hidden>
-            Select A State
-          </option>
-          {populateSelect}
-        </select>
-      </form> */}
       <StateInfoIndex info={stateInfo}/>
       {/* <NewsIndex news={stateNews}/> */}
       <TwitterFeed handle={stateInfo.twitter}/>

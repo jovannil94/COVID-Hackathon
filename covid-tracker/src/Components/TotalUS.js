@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/TotalUS.css";
 import NewsIndex from "./helper/NewsIndex";
-import ReactDOM from "react-dom";
 import TwitterFeed from "./helper/TwitterFeed";
 import MapChart from "./MapChart";
 

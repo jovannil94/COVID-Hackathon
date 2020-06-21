@@ -63,7 +63,7 @@ const MapChart = ({fetchState}) => {
                         dx={offsets[cur.id][0]}
                         dy={offsets[cur.id][1]}
                       >
-                        <text x={4} fontSize={14} alignmentBaseline="middle">
+                        <text x={4} fontSize={14} alignmentBaseline="middle"  onClick={handleClick}>
                           {cur.id}
                         </text>
                       </Annotation>
