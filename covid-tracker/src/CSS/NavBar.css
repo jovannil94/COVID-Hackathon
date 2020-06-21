@@ -7,10 +7,9 @@ $mandarin: #ef7b45ff; => ORANGE
 $vermilion: #d84727ff; => RED-ORANGE
 */
 
-nav {
+.navNarnav {
   display: flex;
   padding-left: 5em;
-  padding-right: 5em;
   justify-content: space-between;
   border-bottom: 3px solid #cdedf6ff;
   text-align: center;
@@ -20,9 +19,19 @@ nav {
   box-shadow: 3px 3px 3px #4292d9;
   opacity: 1;
   z-index: 5;
+  width: 100%;
+  height: 5em;
 }
 
 #ourLogo {
   width: auto;
   height: 5em;
+}
+
+.navBarLinks {
+  margin-block-end: 2em;
+  justify-content: space-between;
+  width: -webkit-fill-available;
+  padding: 2em;
+  padding-left: 3em;
 }
