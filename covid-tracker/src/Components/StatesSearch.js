@@ -9,8 +9,8 @@ import "../CSS/StatesSearch.css";
 import TwitterFeed from "./helper/TwitterFeed";
 
 const StatesSearch = () => {
-  let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3"
-  let APIKey2 = "742e2d633e526b44485af3140a00513e"
+  let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
+  let APIKey2 = "742e2d633e526b44485af3140a00513e";
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
   const [recovered, setRecovered] = useState([]);
