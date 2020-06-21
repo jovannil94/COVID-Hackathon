@@ -27,9 +27,9 @@ const ChartPositive = ({ stateHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Positive Cases by Week",
+          label: "Positive Cases This Month",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-          data: posArr,
+          data: posArr.reverse(),
         },
       ],
     });

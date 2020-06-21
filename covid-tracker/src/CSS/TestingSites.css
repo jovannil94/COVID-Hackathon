@@ -11,6 +11,7 @@ $vermilion: #d84727ff; => RED-ORANGE
 
 .container {
   margin: auto;
+  margin-bottom: 5em;
 }
 
 .testingForm {
@@ -19,6 +20,7 @@ $vermilion: #d84727ff; => RED-ORANGE
   box-shadow: 3px 3px 3px 3px #cdedf6ff;
   width: 25%;
   margin-bottom: 4em;
+  background-color: white;
 }
 
 label {

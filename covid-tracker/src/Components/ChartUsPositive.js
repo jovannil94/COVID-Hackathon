@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
-import axios from "axios";
+import { Line } from "react-chartjs-2";
 import "../CSS/Chart.css";
 
-const Chart = ({ stateHistory }) => {
+const ChartUsPositive = ({ usHistory }) => {
   const [chartData, setChartData] = useState({});
 
   let date = [];
-  let deathsArr = [];
-
-  console.log(stateHistory);
+  let positiveArr = [];
 
   const getChartInfo = () => {
-    for (const object of stateHistory) {
+    for (const object of usHistory) {
       date.push(object.date);
-      deathsArr.push(object.death);
+      positiveArr.push(object.positive);
     }
   };
   useEffect(() => {
@@ -23,13 +20,13 @@ const Chart = ({ stateHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Total Deaths This Month",
+          label: "Total Positive Cases This Month",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-          data: deathsArr.reverse(),
+          data: positiveArr.reverse(),
         },
       ],
     });
-  }, [stateHistory]);
+  }, [usHistory]);
 
   return (
     <>
@@ -40,4 +37,4 @@ const Chart = ({ stateHistory }) => {
   );
 };
 
-export default Chart;
+export default ChartUsPositive;
