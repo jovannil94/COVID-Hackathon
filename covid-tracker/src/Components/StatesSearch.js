@@ -6,6 +6,7 @@ import axios from "axios";
 import StateInfoIndex from "./helper/StateInfoIndex";
 import NewsIndex from "./helper/NewsIndex";
 import "../CSS/StatesSearch.css";
+import TwitterFeed from "./helper/TwitterFeed";
 
 const StatesSearch = () => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3"
@@ -118,8 +119,9 @@ const StatesSearch = () => {
           {populateSelect}
         </select>
       </form>
-      <StateInfoIndex info={stateInfo} />
+      <StateInfoIndex info={stateInfo}/>
       <NewsIndex news={stateNews}/>
+      <TwitterFeed handle={stateInfo.twitter}/>
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
