@@ -1,0 +1,28 @@
+/*COLOR PALLETTE
+    (SCSS HEX) 
+$rich-black: #042a2bff; => VERY DARK GREEN
+$maximum-blue: #5eb1bfff; => AQUAMARINE
+$light-cyan: #cdedf6ff; => LIGHT BLUE
+$mandarin: #ef7b45ff; => ORANGE
+$vermilion: #d84727ff; => RED-ORANGE
+*/
+
+nav {
+  display: flex;
+  padding-left: 5em;
+  padding-right: 5em;
+  justify-content: space-between;
+  border-bottom: 3px solid #cdedf6ff;
+  text-align: center;
+  position: static;
+  top: 0;
+  background-color: rgb(127, 213, 236);
+  box-shadow: 3px 3px 3px #4292d9;
+  opacity: 1;
+  z-index: 5;
+}
+
+#ourLogo {
+  width: auto;
+  height: 5em;
+}

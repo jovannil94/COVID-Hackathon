@@ -1,0 +1,17 @@
+/*COLOR PALLETTE
+    (SCSS HEX) 
+$rich-black: #042a2bff; => VERY DARK GREEN
+$maximum-blue: #5eb1bfff; => AQUAMARINE
+$light-cyan: #cdedf6ff; => LIGHT BLUE
+$mandarin: #ef7b45ff; => ORANGE
+$vermilion: #d84727ff; => RED-ORANGE
+*/
+
+.selectState {
+  border: 1px solid #ef7b45ff;
+  font-size: 1.25em;
+  box-shadow: 3px 3px 3px #4292d9;
+  margin: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}

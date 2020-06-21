@@ -16,7 +16,6 @@ const ChartHospital = ({ stateHistory }) => {
   console.log(stateHistory);
 
   const getChartInfo = () => {
-    // debugger;
     for (const object of stateHistory) {
       date.push(object.date);
       hospitalArr.push(object.hospitalizedCurrently);
@@ -38,7 +37,7 @@ const ChartHospital = ({ stateHistory }) => {
 
   return (
     <>
-      <div className="chart">
+      <div className="chartEach">
         <Line data={chartData} />
       </div>
     </>

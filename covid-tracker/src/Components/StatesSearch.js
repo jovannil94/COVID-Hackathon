@@ -5,8 +5,11 @@ import ChartPositive from "./ChartPositive";
 import axios from "axios";
 import StateInfoIndex from "./helper/StateInfoIndex";
 import NewsIndex from "./helper/NewsIndex";
+import "../CSS/StatesSearch.css";
 
 const StatesSearch = () => {
+  let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3"
+  let APIKey2 = "742e2d633e526b44485af3140a00513e"
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
   const [recovered, setRecovered] = useState([]);
@@ -85,7 +88,7 @@ const StatesSearch = () => {
         `https://covidtracking.com/api/v1/states/${chosenState}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenStateUC}&max=5&token=90a1d988b1cd61c30c70f0348f6b81d3`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenStateUC}&max=5&token=${APIKey2}`
       );
       let resStateHistory = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/daily.json`
@@ -93,10 +96,10 @@ const StatesSearch = () => {
       let resStateInfo = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenState}/info.json`
       );
-      setPositive(resStateCurrent.data.positive);
-      setRecovered(resStateCurrent.data.recovered);
-      setDeaths(resStateCurrent.data.death);
-      setHospitalized(resStateCurrent.data.hospitalized);
+      setPositive(resStateCurrent.data.positive.toLocaleString());
+      setRecovered(resStateCurrent.data.recovered.toLocaleString());
+      setDeaths(resStateCurrent.data.death.toLocaleString());
+      setHospitalized(resStateCurrent.data.hospitalized.toLocaleString());
       setStateNews(resStateNews.data.articles);
       setStateHistory(resStateHistory.data.slice(0, 7));
       setStateInfo(resStateInfo.data);
@@ -106,25 +109,24 @@ const StatesSearch = () => {
   };
 
   return (
-    <div>
+    <div className="stateSearchMainDiv">
       <form onChange={fetchData}>
-        <select>
+        <select className="selectState">
           <option value="" hidden>
             Select A State
           </option>
           {populateSelect}
         </select>
-        StatesSearch
       </form>
       <StateInfoIndex info={stateInfo} />
-      {/* <NewsIndex news={stateNews} /> */}
+      <NewsIndex news={stateNews}/>
       <ul>
         <li>Positive: {positive}</li>
         <li>Recovered: {recovered}</li>
-        <li>Hospitalized: {hospitalized}</li>
+        <li>Hospitalized: {hospitalized.toLocaleString()}</li>
         <li>Death: {death}</li>
       </ul>
-      <div>
+      <div className="chart">
         <Chart stateHistory={stateHistory} />
         <ChartHospital stateHistory={stateHistory} />
         <ChartPositive stateHistory={stateHistory} />
