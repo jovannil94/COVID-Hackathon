@@ -1,4 +1,5 @@
 import React from "react";
+import "../CSS/MapData.css";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
@@ -7,6 +8,7 @@ import {
   Marker,
   Annotation
 } from "react-simple-maps";
+
 
 import allStates from "./helper/allstates.json";
 

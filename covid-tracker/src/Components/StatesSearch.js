@@ -11,6 +11,7 @@ import TwitterFeed from "./helper/TwitterFeed";
 const StatesSearch = ({selectedState}) => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
+  let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
   const [recovered, setRecovered] = useState([]);
@@ -28,7 +29,7 @@ const StatesSearch = ({selectedState}) => {
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey2}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey3}`
       );
       
       let resStateHistory = await axios.get(
@@ -58,7 +59,7 @@ const StatesSearch = ({selectedState}) => {
   return (
     <div className="stateSearchMainDiv">
       <StateInfoIndex info={stateInfo}/>
-      {/* <NewsIndex news={stateNews}/> */}
+      <NewsIndex news={stateNews}/>
       <TwitterFeed handle={stateInfo.twitter}/>
       <ul>
         <li>Positive: {positive}</li>
