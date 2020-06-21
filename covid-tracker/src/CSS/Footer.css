@@ -7,7 +7,7 @@ $mandarin: #ef7b45ff; => ORANGE
 $vermilion: #d84727ff; => RED-ORANGE
 */
 
-footer {
+.footer {
     display: flex;
     flex-flow: row;
     position: fixed;

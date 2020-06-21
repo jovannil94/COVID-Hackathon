@@ -1,8 +1,7 @@
-p{
+.paragraph{
     text-align: justify;
     margin: auto;
   padding: 5em;
-  box-shadow: 1px 3px 3px 1px #cdedf6ff;
   width: 50%;
   margin-bottom: 1em;
   border: 1px solid #ef7b45ff;
