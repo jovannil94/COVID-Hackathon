@@ -121,7 +121,7 @@ const StatesSearch = () => {
         </select>
       </form>
       <StateInfoIndex info={stateInfo}/>
-      <NewsIndex news={stateNews}/>
+      {/* <NewsIndex news={stateNews}/> */}
       <TwitterFeed handle={stateInfo.twitter}/>
       <ul>
         <li>Positive: {positive}</li>
