@@ -20,7 +20,6 @@ const TotalUS = ({fetchState}) => {
       let resUSNews = await axios.get(
         `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey3}`
       );
-
       let data = response.data;
       setTotals(data);
       setUsNews(resUSNews.data.articles);
@@ -68,7 +67,7 @@ const TotalUS = ({fetchState}) => {
         <MapChart fetchState={fetchState}/>
       </div>
       <div className="usFeedNews">
-         {/* <NewsIndex news={usNews}/> */}
+         <NewsIndex news={usNews}/>
         <TwitterFeed handle={"@CDCgov"}/>
       </div>
     </div>
