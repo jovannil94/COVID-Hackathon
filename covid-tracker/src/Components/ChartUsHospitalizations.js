@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
-import axios from "axios";
+import { Line } from "react-chartjs-2";
+import "../CSS/Chart.css";
 
-const ChartHospital = ({ stateHistory }) => {
+const ChartUsHospitalizations = ({ usHistory }) => {
   const [chartData, setChartData] = useState({});
-  const labelsFont = "'Cabin', sans-serif";
-  const labelsSize = 16;
-  const labelsColor = "#8c8d8c";
-  const ticksFont = "'Cabin'";
-  const ticksColor = "#606060";
 
   let date = [];
   let hospitalArr = [];
 
-  console.log(stateHistory);
-
   const getChartInfo = () => {
-    for (const object of stateHistory) {
+    for (const object of usHistory) {
       date.push(object.date);
       hospitalArr.push(object.hospitalizedCurrently);
     }
@@ -27,13 +20,13 @@ const ChartHospital = ({ stateHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Hospitalized Currently This Month",
+          label: "Total Hospitalizations This Month",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
           data: hospitalArr.reverse(),
         },
       ],
     });
-  }, [stateHistory]);
+  }, [usHistory]);
 
   return (
     <>
@@ -44,4 +37,4 @@ const ChartHospital = ({ stateHistory }) => {
   );
 };
 
-export default ChartHospital;
+export default ChartUsHospitalizations;

@@ -44,7 +44,7 @@ const StatesSearch = ({selectedState}) => {
       setDeaths(resStateCurrent.data.death.toLocaleString());
       setHospitalized(resStateCurrent.data.hospitalized.toLocaleString());
       setStateNews(resStateNews.data.articles);
-      setStateHistory(resStateHistory.data.slice(0, 7));
+      setStateHistory(resStateHistory.data.slice(0, 30));
       setStateInfo(resStateInfo.data);
     } catch (error) {
       console.log(error);
@@ -60,7 +60,7 @@ const StatesSearch = ({selectedState}) => {
   return (
     <div className="stateSearchMainDiv">
       <StateInfoIndex info={stateInfo}/>
-      <NewsIndex news={stateNews}/>
+      {/* <NewsIndex news={stateNews}/> */}
       <TwitterFeed handle={stateInfo.twitter}/>
       <ul>
         <li>Positive: {positive}</li>

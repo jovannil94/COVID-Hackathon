@@ -15,3 +15,7 @@ $vermilion: #d84727ff; => RED-ORANGE
   padding-left: 1em;
   padding-right: 1em;
 }
+
+.stateSearchMainDiv {
+  margin-bottom: 10em;
+}

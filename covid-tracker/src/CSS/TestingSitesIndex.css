@@ -15,9 +15,39 @@ className="binfo"
   margin: auto;
   padding: 5em;
   box-shadow: 1px 3px 3px 1px #cdedf6ff;
-  width: 25%;
-  margin-bottom: 1em;
+  width: min-content;
+  margin-bottom: 5em;
   border: 1px solid #ef7b45ff;
+  cursor: pointer;
+  text-align: start;
+  background-color: white;
+  
+}
+
+.binfo {
+  color: #5eb1bfff;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.googleMapLink {
+  color: #5eb1bfff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.locationsDivMain > li {
+  padding-bottom: 1em;
+}
+
+.binfoAdd {
+  color: #5eb1bfff;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
 }
 
 .link{

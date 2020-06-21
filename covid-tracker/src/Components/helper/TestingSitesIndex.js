@@ -8,7 +8,7 @@ const TestingSitesIndex = ({ sites }) => {
         {sites.map((site) => (
           <div className="locationsDivMain" key={site.id}>
             <li>
-              <h3 className="binfo">Location: {site.title}</h3>
+              <h3 className="binfo">{site.title}</h3>
             </li>
             <li className="link"
               onClick={() =>
@@ -17,15 +17,18 @@ const TestingSitesIndex = ({ sites }) => {
                 )
               }
             >
-              <b className="binfo">Address:</b> {site.address.houseNumber} {site.address.street},{" "}
-              {site.address.city}, {site.address.state}{" "}
-              {site.address.postalCode}, {site.address.countryName}
+              <p className="binfo">
+                {" "}
+                {site.address.houseNumber} {site.address.street},{" "}
+                {site.address.city}, {site.address.state}{" "}
+                {site.address.postalCode}, {site.address.countryName}
+              </p>
             </li>
             <li className="link" onClick={() => window.open(`${site.contacts[0].www[0].value}`)}>
               <b className="binfo">Website:</b> {site.contacts[0].www[0].value}
             </li>
             <li>
-              <b className="binfo">Phone:</b> {site.contacts[0].phone[0].value}
+               <b className="binfo">Phone:</b> {site.contacts[0].phone[0].value}
             </li>
           </div>
         ))}
