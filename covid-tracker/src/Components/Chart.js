@@ -23,7 +23,7 @@ const Chart = ({ stateHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Total US Deaths by Week",
+          label: "Total Deaths by Week",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
           data: deathsArr,
         },
