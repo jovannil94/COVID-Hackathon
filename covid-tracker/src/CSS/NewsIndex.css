@@ -1,0 +1,20 @@
+.newsIndexMainDiv {
+  padding: 3em;
+}
+
+.newsDivEach {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  box-shadow: 1px 3px 3px 1px #cdedf6ff;
+  width: 75%;
+  margin-bottom: 1em;
+  border: 1px solid #ef7b45ff;
+  padding: 3em;
+}
+
+.articleImage {
+  width: 100%;
+  height: auto;
+}

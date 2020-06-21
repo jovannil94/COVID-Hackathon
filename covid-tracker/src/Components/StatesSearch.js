@@ -30,6 +30,7 @@ const StatesSearch = ({selectedState}) => {
       let resStateNews = await axios.get(
         `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey2}`
       );
+      
       let resStateHistory = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/daily.json`
       );

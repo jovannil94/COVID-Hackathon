@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TotalUS from "./TotalUS";
 import StatesSearch from "./StatesSearch";
-
+import ourLogo from "../Images/ourLogo.png";
 import "../CSS/HomePage.css";
 
 const HomePage = () => {
@@ -14,8 +14,13 @@ const HomePage = () => {
   return (
     <>
       <div className="homeDivMain">
-        <TotalUS fetchState={fetchState} />
-        <StatesSearch selectedState={selectedState} />
+
+      <img src={ourLogo} alt="logo"/>
+      <h1 className="header">Get The Latest US Covid Information in the US</h1>
+      <TotalUS fetchState={fetchState} />
+      <StatesSearch selectedState={selectedState} />
+
+
       </div>
     </>
   );
