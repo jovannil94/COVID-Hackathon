@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/TotalUS.css";
-import usMap from "../Images/usMap.png";
+import NewsIndex from "./helper/NewsIndex";
+import TwitterFeed from "./helper/TwitterFeed";
 
 const TotalUS = () => {
+  let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
+  let APIKey2 = "742e2d633e526b44485af3140a00513e";
   const [totals, setTotals] = useState([]);
+  const [usNews, setUsNews] = useState([]);
 
   const getTotals = async () => {
     try {
       let response = await axios.get(
         `https://covidtracking.com/api/v1/us/current.json`
       );
-
+      let resUSNews = await axios.get(
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=5&token=${APIKey2}`
+      ); 
       let data = response.data;
       setTotals(data);
+      setUsNews(resUSNews.data.articles)
     } catch (error) {
       console.log(error);
     }
@@ -44,6 +51,7 @@ const TotalUS = () => {
       </div>
     );
   });
+
   useEffect(() => {
     getTotals();
   }, []);
@@ -53,9 +61,8 @@ const TotalUS = () => {
       <div>
         <ul>{info}</ul>
       </div>
-      {/* <div id="homeImageDiv">
-        <img src={usMap} alt="US map" />
-      </div> */}
+      <NewsIndex news={usNews}/>
+      <TwitterFeed handle={"@CDCgov"}/>
     </div>
   );
 };
