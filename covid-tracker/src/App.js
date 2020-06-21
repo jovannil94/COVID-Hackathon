@@ -9,11 +9,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      COVID TRACKER
       <NavBar />
       <Switch>
         <Route exact path={"/"} component={HomePage} />
-        <Route exact path={"/testingsites"} component={TestingSites}/>
+        <Route exact path={"/testingsites"} component={TestingSites} />
       </Switch>
       <Footer />
     </div>
