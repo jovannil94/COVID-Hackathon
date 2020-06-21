@@ -44,10 +44,10 @@ const TestingSites = () => {
       <div>
         <form className="testingForm" onSubmit={handleForm}>
           <div className="addressLabel">
-            <label>Enter address or zip code</label>
+            <label>Enter US address or zip code</label>
             <input id="addressInput" type="text" {...address} />
           </div>
-          <input type="submit" value="Search for Testing Sites" />
+          <input id="searchSubmitBtn" type="submit" value="Search for Testing Sites" />
         </form>
         <div>
           <TestingSitesIndex sites={testing} />

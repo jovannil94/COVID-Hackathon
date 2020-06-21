@@ -1,10 +1,31 @@
+/*COLOR PALLETTE
+    (SCSS HEX) 
+$rich-black: #042a2bff; => VERY DARK GREEN
+$maximum-blue: #5eb1bfff; => AQUAMARINE
+$light-cyan: #cdedf6ff; => LIGHT BLUE
+$mandarin: #ef7b45ff; => ORANGE
+$vermilion: #d84727ff; => RED-ORANGE
+#4292D9
+#A0C5E7
+*/
+
 .container {
   margin: auto;
-  
 }
 
 .testingForm {
+  margin: auto;
   padding: 1em;
+  box-shadow: 3px 3px 3px 3px #cdedf6ff;
+  width: fit-content;
+  margin-bottom: 4em;
+}
+
+label {
+  color: #4292d9;
+  font-size: large;
+  padding: 0.5em;
+  font-weight: bold;
 }
 
 .addressLabel {
@@ -15,6 +36,26 @@
 
 #addressInput {
   margin: auto;
-  width: 12em;
+  width: 10em;
   margin-bottom: 5px;
+  border: 1px solid #ef7b45ff;
+  font-size: 1em;
+  box-shadow: 3px 3px 3px #4292d9;
+  height: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#searchSubmitBtn {
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 5px;
+  border: none;
+  font-size: 1.25em;
+  background-color: #4292d9;
+  color: white;
+  padding: 0.5em;
+  font-size: small;
+  box-shadow: 1px 1px 1px 1px #cdedf6ff;
+  border-radius: 5px;
 }

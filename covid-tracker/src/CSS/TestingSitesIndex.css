@@ -1,0 +1,19 @@
+/*COLOR PALLETTE
+    (SCSS HEX) 
+$rich-black: #042a2bff; => VERY DARK GREEN
+$maximum-blue: #5eb1bfff; => AQUAMARINE
+$light-cyan: #cdedf6ff; => LIGHT BLUE
+$mandarin: #ef7b45ff; => ORANGE
+$vermilion: #d84727ff; => RED-ORANGE
+#4292D9
+#A0C5E7
+*/
+
+.locationsDivMain {
+  margin: auto;
+  padding: 5em;
+  box-shadow: 1px 3px 3px 1px #cdedf6ff;
+  width: 25%;
+  margin-bottom: 1em;
+  border: 1px solid #ef7b45ff;
+}
