@@ -4,11 +4,12 @@ import "../CSS/Footer.css";
 
 const Footer = () => {
   return (
-  
     <footer>
-      <nav>
-        <NavLink exact to={"/about"}>About Covid Near Us</NavLink>
-        <NavLink to={"/bio"}>Team Bio's</NavLink>
+      <nav className="footer">
+        <NavLink exact to={"/about"}>
+          About Covid Near US
+        </NavLink>
+        <NavLink to={"/bio"}>Team Bios</NavLink>
       </nav>
     </footer>
   );
