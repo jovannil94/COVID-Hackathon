@@ -9,6 +9,7 @@ const TotalUS = ({fetchState}) => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
+  let APIKey4 = "18fdea09268d21bac23da246c878d7af";
   const [totals, setTotals] = useState([]);
   const [usNews, setUsNews] = useState([]);
 
@@ -18,7 +19,7 @@ const TotalUS = ({fetchState}) => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey3}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=5&token=${APIKey4}`
       );
       let data = response.data;
       setTotals(data);

@@ -19,3 +19,12 @@ className="binfo"
   margin-bottom: 1em;
   border: 1px solid #ef7b45ff;
 }
+
+.link{
+  color: blue;
+}
+
+.link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
