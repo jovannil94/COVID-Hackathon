@@ -3,8 +3,9 @@ import axios from "axios";
 import "../CSS/TotalUS.css";
 import NewsIndex from "./helper/NewsIndex";
 import TwitterFeed from "./helper/TwitterFeed";
+import MapChart from "./MapChart";
 
-const TotalUS = () => {
+const TotalUS = ({fetchState}) => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
@@ -60,13 +61,16 @@ const TotalUS = () => {
 
   return (
     <div className="UStotalsMap">
-      <div>
+      <div className="info">
         <ul>{info}</ul>
       </div>
+      <div className="interactiveMap">
+        <MapChart fetchState={fetchState}/>
+      </div>
       <div className="usFeedNews">
-        <NewsIndex news={usNews} />
-        <TwitterFeed handle={"@CDCgov"} />
-      </div>{" "}
+         {/* <NewsIndex news={usNews}/> */}
+        <TwitterFeed handle={"@CDCgov"}/>
+      </div>
     </div>
   );
 };
