@@ -28,3 +28,12 @@ margin-top: 2em;
   padding-bottom: 1em;
   cursor: pointer;
 }
+
+.websites{
+  color:blue;
+}
+
+.websites:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -19,7 +19,8 @@ const NavBar = () => {
               Find Testing Sites
             </NavLink>
             <NavLink to={"/state"}></NavLink>
-          </div>{" "}
+          </div>
+          {/* {" "} */}
         </nav>
       </div>
     </>
