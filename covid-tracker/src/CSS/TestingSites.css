@@ -60,4 +60,5 @@ label {
   font-size: small;
   box-shadow: 1px 1px 1px 1px #cdedf6ff;
   border-radius: 5px;
+  cursor: pointer;
 }
