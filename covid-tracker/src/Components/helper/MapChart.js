@@ -55,7 +55,7 @@ const MapChart = ({fetchState}) => {
                     centroid[0] < -67 &&
                     (Object.keys(offsets).indexOf(cur.id) === -1 ? (
                       <Marker coordinates={centroid}>
-                        <text y="2" fontSize={14} textAnchor="middle" onClick={handleClick}>
+                        <text y="2" fontSize={20} textAnchor="middle" onClick={handleClick}>
                           {cur.id}
                         </text>
                       </Marker>
