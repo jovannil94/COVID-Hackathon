@@ -9,6 +9,7 @@ const ChartUsDeaths = ({ usHistory }) => {
   let deathArr = [];
 
   const getChartInfo = () => {
+    
     for (const object of usHistory) {
       date.push(object.date);
       deathArr.push(object.death);

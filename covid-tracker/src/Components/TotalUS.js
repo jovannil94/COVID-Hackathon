@@ -39,11 +39,15 @@ const TotalUS = ({ fetchState }) => {
   };
 
   const info = totals.map((el, i) => {
+      const today = new Date(el.date)
+      const day = ("0" + today.getDate()).slice(-2)
+      const month = ("0" + (today.getMonth()+1)).slice(-2)
+      const currDate = month + '/' + day + '/' + today.getFullYear()
     return (
       <div className="usTotalsDiv" key={i}>
         <h1 className="usStatsli">Current US Totals</h1>
         <li className="usStatsli">
-          <p className="usP">Date:</p> {el.date}
+    <p className="usP">Date:</p> {currDate}
         </li>
         <li className="usStatsli">
           <p className="usP">Positive:</p>
