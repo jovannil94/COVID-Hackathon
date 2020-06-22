@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../CSS/StateInfo.css";
-import axios from "axios";
 
 const StateInfoIndex = ({ info, statePic }) => {
   return (

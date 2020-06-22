@@ -18,20 +18,32 @@ const ChartUsPositive = ({ usHistory }) => {
     return newDate.toLocaleDateString()
   }
 
+  const reduceToMillions = (number) => {
+    const stringNumber= number.toString();
+    const firstDigit= stringNumber.slice(0,1);
+    const secondDigit= stringNumber.slice(1,2);
+    const newString = `${firstDigit}.${secondDigit}`
+    const newNumber = Number(newString);
+    return newNumber
+  }
+
   const getChartInfo = () => {
     for (const object of usHistory) {
       let updatedDate = fixDate(object.date)
       date.push(updatedDate);
-      positiveArr.push(object.positive);
+      debugger
+      positiveArr.push(reduceToMillions(object.positive));
+      console.log(positiveArr)
     }
   };
+
   useEffect(() => {
     getChartInfo();
     setChartData({
       labels: date.reverse(),
       datasets: [
         {
-          label: "US Positive Cases This Month",
+          label: "US Positive Cases (in mil)",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
           data: positiveArr.reverse(),
         },

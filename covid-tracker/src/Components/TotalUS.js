@@ -27,7 +27,7 @@ const TotalUS = ({ fetchState }) => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=2&token=${APIKey2}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=5&token=${APIKey7}`
       );
       let resUSTotals = await axios.get(
         `https://covidtracking.com/api/v1/us/daily.json`
