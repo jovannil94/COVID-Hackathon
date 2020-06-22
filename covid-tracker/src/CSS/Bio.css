@@ -1,11 +1,48 @@
 .bio {
-  text-align: justify;
-  margin: auto;
-  padding: 5em;
-  width: 50%;
-  margin-bottom: 1em;
   
+  text-align: center;
+  margin: auto;
+  display: flex;
+  padding-left: 2em;
+  margin-bottom: 1em;
+  font-family: "Nunito Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif";
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 400;
+  color: #484848;
+  line-height: 1.5;
+  padding-top: 2em;
 }
+
+.team {
+  font-family: "Nunito Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif";
+}
+
 .bioparagraph {
   font-size: medium;
+  width: 95%;
+  font-family: "Nunito Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif";
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.bioDivs {
+  width: 50%;
+  justify-content: start;
+  padding: 2em;
+}
+
+.linked {
+  display: flex;
+  text-align: left;
+}
+
+.titleTwit-name {
+  padding-bottom: 1em;
+  font-weight: bolder;
+  font-size: 30pt;
+
+  color: #042a2bff;
 }
