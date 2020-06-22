@@ -13,6 +13,18 @@
 }
 
 .articleImage {
-  width: 100%;
+  width: 90%;
   height: auto;
+  padding-left: 2em;
+  padding-top: 1em;
+}
+
+.newsTitle {
+  font-weight: bold;
+  font-size: 16pt;
+  padding-bottom: 10px;
+}
+
+.desc {
+  padding-bottom: 10px;
 }

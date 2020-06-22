@@ -15,6 +15,7 @@ const TotalUS = ({ fetchState }) => {
   let APIKey4 = "18fdea09268d21bac23da246c878d7af";
   let APIKey5 = "4a58e4dd760a890ec9da8ec1ba6f5270";
   let APIKey6 = "f173bb743037755f0aab662d21239731";
+  let APIKey7 = "c2061abca4fd3ab0e746b0f2ff238506";
 
   const [totals, setTotals] = useState([]);
   const [usNews, setUsNews] = useState([]);
@@ -26,7 +27,7 @@ const TotalUS = ({ fetchState }) => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey6}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey}`
       );
       let resUSTotals = await axios.get(
         `https://covidtracking.com/api/v1/us/daily.json`
@@ -42,18 +43,17 @@ const TotalUS = ({ fetchState }) => {
   };
 
   const fixDate = (number) => {
-    const dateArr=[]
-    const stringDate= number.toString()
-    const year = parseInt(stringDate.slice(0,4));
-    const month = parseInt(stringDate.slice(4,6));
+    const dateArr = [];
+    const stringDate = number.toString();
+    const year = parseInt(stringDate.slice(0, 4));
+    const month = parseInt(stringDate.slice(4, 6));
     const day = parseInt(stringDate.slice(6));
-    dateArr.push(year, month, day)
-    let newDate = new Date(dateArr)
-    return newDate.toDateString()
-  }
+    dateArr.push(year, month, day);
+    let newDate = new Date(dateArr);
+    return newDate.toDateString();
+  };
 
   const info = totals.map((el, i) => {
-    
     return (
       <div className="info" key={i}>
         <h1 className="usStatsli">US Totals</h1>
@@ -99,7 +99,7 @@ const TotalUS = ({ fetchState }) => {
       </div>
       <div className="usFeedNews">
         <TwitterFeed handle={"@CDCgov"} />
-        {/* <NewsIndex news={usNews} /> */}
+        <NewsIndex news={usNews} />
       </div>
     </div>
   );
