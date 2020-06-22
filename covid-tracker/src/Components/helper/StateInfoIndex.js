@@ -8,11 +8,11 @@ const StateInfoIndex = ({ info }) => {
         <li>
           <h1 className="stateName">{info.name}</h1>
         </li>
-        Websites:
-        <li onClick={() => window.open(`${info.covid19Site}`)}>
+        Official Government Websites:
+        <li className="websites" onClick={() => window.open(`${info.covid19Site}`)}>
           {info.covid19Site}
         </li>
-        <li onClick={() => window.open(`${info.covid19SiteSecondary}`)}>
+        <li className="websites" onClick={() => window.open(`${info.covid19SiteSecondary}`)}>
           {info.covid19SiteSecondary}
         </li>
         <details>

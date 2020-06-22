@@ -6,7 +6,7 @@ import "../CSS/HomePage.css";
 
 const HomePage = () => {
   const history = useHistory();
-  const stateRedirect = (chosen) => history.push(`/${chosen}`);
+  const stateRedirect = (chosen) => history.push(`/state/${chosen}`);
 
   const fetchState = (chosen) => {
     stateRedirect(chosen);
