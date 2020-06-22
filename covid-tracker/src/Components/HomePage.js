@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { useHistory } from "react-router-dom"
 import TotalUS from "./TotalUS";
 import ourLogo from "../Images/ourLogo.png";
 import "../CSS/HomePage.css";
