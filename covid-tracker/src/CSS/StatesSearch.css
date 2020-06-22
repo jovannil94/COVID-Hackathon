@@ -43,6 +43,20 @@ $vermilion: #d84727ff; => RED-ORANGE
   margin: auto;
   display: flex;
   flex-direction: row;
-  margin-left: 7em;
   width: 100vw;
+margin-left: 5em;
+}
+
+.twitter {
+  font-size: 20pt;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.titleTwit{
+  font-weight: bolder;
+  font-size: 30pt;
+  padding: 1em;
+  color: #042a2bff;
 }

@@ -35,7 +35,7 @@ const StatesSearch = () => {
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=1&token=${APIKey}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=2&token=${APIKey}`
       );
 
       let resStateHistory = await axios.get(
@@ -93,8 +93,14 @@ const StatesSearch = () => {
       </div>
 
       <div className="stateNewsFeed">
-        <TwitterFeed handle={stateInfo.twitter} />
-        <NewsIndex news={stateNews} />
+        <div className="twitter">
+          <p className="titleTwit">Twitter</p>
+          <TwitterFeed handle={stateInfo.twitter} />
+        </div>
+        <div className="twitter">
+          <p className="titleTwit">News</p>
+          <NewsIndex news={stateNews} />
+        </div>
       </div>
     </div>
   );
