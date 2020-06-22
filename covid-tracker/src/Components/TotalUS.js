@@ -27,7 +27,7 @@ const TotalUS = ({ fetchState }) => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey2}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=2&token=${APIKey2}`
       );
       let resUSTotals = await axios.get(
         `https://covidtracking.com/api/v1/us/daily.json`
@@ -98,8 +98,14 @@ const TotalUS = ({ fetchState }) => {
         </div>
       </div>
       <div className="usFeedNews">
-        <TwitterFeed handle={"@CDCgov"} />
-        <NewsIndex news={usNews} />
+        <div className="twitter">
+          <p className="titleTwit">Twitter</p>
+          <TwitterFeed handle={"@CDCgov"} />
+        </div>
+        <div className="twitter">
+          <p className="titleTwit">Twitter</p>
+          <NewsIndex news={usNews} />
+        </div>
       </div>
     </div>
   );
