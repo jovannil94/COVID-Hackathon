@@ -5,8 +5,8 @@ import TestingSites from "./Components/TestingSites";
 import NavBar from "./Components/NavBar";
 import StatesSearch from "./Components/StatesSearch";
 import Footer from "./Components/Footer";
-import About from "./Components/About";
-import Bio from "./Components/Bio";
+import About from "./Components/helper/About";
+import Bio from "./Components/helper/Bio";
 import "./App.css";
 
 function App() {

@@ -7,9 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <nav className="footer">
-        <NavLink exact to={"/about"}>
-          About Covid Near US
-        </NavLink>
+        <NavLink exact to={"/about"}>About Covid Near US</NavLink>
         <NavLink to={"/bio"}>Team Bios</NavLink>
         <div className="shareSocial">
           <p>Share: </p>

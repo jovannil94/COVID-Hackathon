@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/MapData.css";
+import "../../CSS/MapData.css";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
@@ -10,7 +10,7 @@ import {
 } from "react-simple-maps";
 
 
-import allStates from "./helper/allstates.json";
+import allStates from "./allstates.json";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 

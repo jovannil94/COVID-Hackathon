@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Chart from "./Chart";
-import ChartHospital from "./ChartHospital";
-import ChartPositive from "./ChartPositive";
+import Chart from "./helper/Charts/Chart";
+import ChartHospital from "./helper/Charts/ChartHospital";
+import ChartPositive from "./helper/Charts/ChartPositive";
 import axios from "axios";
 import StateInfoIndex from "./helper/StateInfoIndex";
 import NewsIndex from "./helper/NewsIndex";
