@@ -3,10 +3,10 @@ import axios from "axios";
 import "../CSS/TotalUS.css";
 import NewsIndex from "./helper/NewsIndex";
 import TwitterFeed from "./helper/TwitterFeed";
-import MapChart from "./MapChart";
-import ChartUsHospitalizations from "./ChartUsHospitalizations";
-import ChartUsPositive from "./ChartUsPositive";
-import ChartUsDeaths from "./ChartsUsDeaths";
+import MapChart from "./helper/MapChart";
+import ChartUsHospitalizations from "./helper/Charts/ChartUsHospitalizations";
+import ChartUsPositive from "./helper/Charts/ChartUsPositive";
+import ChartUsDeaths from "./helper/Charts/ChartsUsDeaths";
 
 const TotalUS = ({ fetchState }) => {
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
@@ -38,16 +38,24 @@ const TotalUS = ({ fetchState }) => {
     }
   };
 
+  const fixDate = (number) => {
+    const dateArr=[]
+    const stringDate= number.toString()
+    const year = parseInt(stringDate.slice(0,4));
+    const month = parseInt(stringDate.slice(4,6));
+    const day = parseInt(stringDate.slice(6));
+    dateArr.push(year, month, day)
+    let newDate = new Date(dateArr)
+    return newDate.toDateString()
+  }
+
   const info = totals.map((el, i) => {
-      const today = new Date(el.date)
-      const day = ("0" + today.getDate()).slice(-2)
-      const month = ("0" + (today.getMonth()+1)).slice(-2)
-      const currDate = month + '/' + day + '/' + today.getFullYear()
+    
     return (
       <div className="usTotalsDiv" key={i}>
         <h1 className="usStatsli">Current US Totals</h1>
         <li className="usStatsli">
-    <p className="usP">Date:</p> {currDate}
+          <p className="usP">Updated Data From:</p> {fixDate(el.date)}
         </li>
         <li className="usStatsli">
           <p className="usP">Positive:</p>
