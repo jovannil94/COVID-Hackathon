@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 // import TestingSites from "./TestingSites";
 import "../CSS/NavBar.css";
 import logo from "../Images/ourLogo.png";
-import { Whatsapp, Facebook, Google, Linkedin, Twitter } from 'react-social-sharing'
-
 
 const NavBar = () => {
   return (
@@ -15,9 +13,11 @@ const NavBar = () => {
           <img id="ourLogo" src={logo} alt="logo" />
           <div className="navBarLinks">
             <NavLink className="navBarLinks" exact to={"/"}>
-              HomePage
+              Home
             </NavLink>
-            <NavLink className="navBarLinks" to={"/testingsites"}>Testing Sites</NavLink>
+            <NavLink className="navBarLinks" to={"/testingsites"}>
+              Find Testing Sites
+            </NavLink>
             <NavLink to={"/state"}></NavLink>
           </div>{" "}
         </nav>

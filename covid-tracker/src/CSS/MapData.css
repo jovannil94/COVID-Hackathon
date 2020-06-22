@@ -1,3 +1,11 @@
-text:hover{
-    cursor: pointer;
+text:hover {
+  cursor: pointer;
+}
+
+.rsm-geography {
+  cursor: pointer;
+}
+
+.rsm-geography:hover {
+  background-color: #5eb1bfff;
 }

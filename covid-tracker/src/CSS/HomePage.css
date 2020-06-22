@@ -7,14 +7,17 @@ $mandarin: #ef7b45ff; => ORANGE
 $vermilion: #d84727ff; => RED-ORANGE
 */
 
-
 /* .homeDivMain {
     display: flex;
     flex-direction: row;
 } */
 
 .header {
-    font-size: 1.5em;
-    font-weight: 500;
-    color: #5eb1bfff;
+  font-size: 2em;
+  font-weight: 700;
+  /* color: rgba(75, 192, 192, 0.6); */
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: #042a2bff;
+  text-shadow: 1px 1px 1px #cdedf6ff;
 }

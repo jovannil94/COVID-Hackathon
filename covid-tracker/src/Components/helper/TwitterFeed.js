@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
-const TwitterFeed = ({handle}) => {
+const TwitterFeed = ({ handle }) => {
   const [twitterName, setTwitterName] = useState(handle);
 
   useEffect(() => {
@@ -10,11 +10,18 @@ const TwitterFeed = ({handle}) => {
     }
   }, [handle]);
 
-    return(
-      <div>
-        {twitterName !== undefined ? <TwitterTimelineEmbed sourceType="profile" screenName={twitterName} key={twitterName} options={{height: 100, width: 600}}/> : null}
-      </div>
-    )
-}
-  
-  export default TwitterFeed;
+  return (
+    <div>
+      {twitterName !== undefined ? (
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName={twitterName}
+          key={twitterName}
+          options={{ height: 600, width: 900}}
+        />
+      ) : null}
+    </div>
+  );
+};
+
+export default TwitterFeed;

@@ -8,17 +8,10 @@ $vermilion: #d84727ff; => RED-ORANGE
 */
 
 .chart {
-  margin: auto;
+  margin-bottom: 2em;
   display: flex;
   flex-direction: row;
-  width: min-content;
+  padding: 2em 2em 3em 2em;
   height: auto;
-  box-shadow: 1px 1px 1px 1px #4292d9;
-  margin-bottom: 10em;
-  margin-top: 3em;
-  background-color: white;
-}
-
-.chartEach {
-  padding: 2em;
+  width: min-content;
 }

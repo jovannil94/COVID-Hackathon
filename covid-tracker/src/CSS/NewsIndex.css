@@ -1,29 +1,18 @@
-.newsIndexMainDiv {
-  padding: 3em;
-}
-
 .newsDivEach {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
   box-shadow: 1px 3px 3px 1px #cdedf6ff;
-  width: 75%;
+  width: 60%;
   margin-bottom: 1em;
-  border: 1px solid #ef7b45ff;
+  margin-left: 5em;
   padding: 3em;
+  background-color: white;
+  cursor: pointer;
+  text-align: left;
 }
 
 .articleImage {
   width: 100%;
   height: auto;
-}
-
-.link{
-  color: blue;
-}
-
-.link:hover{
-  text-decoration: underline;
-  cursor: pointer;
 }

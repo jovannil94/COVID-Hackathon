@@ -37,6 +37,7 @@ const Chart = ({ stateHistory }) => {
           data: deathsArr.reverse(),
         },
       ],
+      
     });
   }, [stateHistory]);
 

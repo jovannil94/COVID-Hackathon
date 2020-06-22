@@ -1,0 +1,30 @@
+.stateName {
+  font-size: 4em;
+  font-weight: bold;
+  color: #042a2bff;
+  text-shadow: 1px 1px 1px #cdedf6ff;
+  width: max-content;
+  padding-bottom: 1em;
+}
+
+.stateInfoIdx {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  width: min-content;
+  height: auto;
+  text-align: initial;
+  color: rgba(32, 87, 87, 0.664);
+  padding-left: 14em;
+  padding-right: 14em;
+margin-top: 2em;
+}
+
+.stateInfoUl > li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20%;
+  padding-bottom: 1em;
+  cursor: pointer;
+}

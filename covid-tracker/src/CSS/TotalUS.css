@@ -8,52 +8,78 @@ $vermilion: #d84727ff; => RED-ORANGE
 */
 
 .UStotalsMap {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2em 6em 6em 6em;
-  
-  /* width: 100vw; */
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 10em;
+  margin-top: 5em;
 }
 
-.usFeedNews {
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-  overflow: scroll;
-}
-
-.usTotalsDiv {
-  border: 1px #ef7b45ff solid;
-  width: fit-content;
-  padding: 2em;
-  margin-left: 2em;
-  background-color: white;
-  box-shadow: 3px 3px 3px #4292d9;
+.info {
+  margin-left: 7em;
+  width: min-content;
+  text-align: left;
 }
 
 .usP {
   font-weight: 550;
   font-size: 20pt;
   color: #042a2bff;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
+  width: min-content;
 }
 
 .usStatsli {
+  width: min-content;
   font-weight: 400;
   font-size: 25pt;
   color: #d84727ff;
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
 }
 
-#homeImageDiv {
-  padding-top: 5em;
+.interactiveMap {
+  width: 75%;
   height: auto;
-  width: 100%;
+  margin: auto;
 }
 
-.interactiveMap{
-  width: 50%;
-  height: auto;
+.usUl {
+  width: 25%;
 }
+
+.usFeedNews {
+  grid-row-start: 2;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 100vw;
+  padding: 2em;
+  margin-top: 2em;
+}
+
+.chartDivwith3 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 8em;
+  margin-bottom: 2em;
+}
+
+.headerMap {
+  color: #042a2bff;
+  text-shadow: 1px 1px 1px #dddddd;
+  font-size: larger;
+  margin-top: 5em;
+}
+
+.rsm-geography:hover {
+  stroke: #5eb1bfff;
+  fill: #ef7b45ff;
+}
+
+.rsm-geography:active {
+  stroke: #5eb1bfff;
+  fill: #ef7b45ff;
+}
+/* stroke: rgb(255, 255, 255);
+    fill: rgb(221, 221, 221); */

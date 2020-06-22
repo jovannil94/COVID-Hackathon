@@ -11,11 +11,12 @@ import TwitterFeed from "./helper/TwitterFeed";
 
 const StatesSearch = () => {
   const { chosen } = useParams();
-  debugger;
   let APIKey = "90a1d988b1cd61c30c70f0348f6b81d3";
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
   let APIKey4 = "18fdea09268d21bac23da246c878d7af";
+  let APIKey5 = "4a58e4dd760a890ec9da8ec1ba6f5270";
+  let APIKey6 = "f173bb743037755f0aab662d21239731";
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
   const [recovered, setRecovered] = useState([]);
@@ -27,13 +28,12 @@ const StatesSearch = () => {
   const fetchData = async (state) => {
     let chosenStateLC = state.toLowerCase();
     let chosenState = state;
-    debugger;
     try {
       let resStateCurrent = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey4}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=1&token=${APIKey6}`
       );
 
       let resStateHistory = await axios.get(
@@ -62,20 +62,38 @@ const StatesSearch = () => {
 
   return (
     <div className="stateSearchMainDiv">
-      <StateInfoIndex info={stateInfo} />
-      <ul>
-        <li>Positive: {positive}</li>
-        <li>Recovered: {recovered}</li>
-        <li>Hospitalized: {hospitalized.toLocaleString()}</li>
-        <li>Death: {death}</li>
+      <ul className="stateNumbers">
+        <li className="usStatsli">
+          <p className="usP">Positive:</p> {positive}
+        </li>
+        <li className="usStatsli">
+          <p className="usP">Recovered:</p>
+          {recovered}
+        </li>
+        <li className="usStatsli">
+          <p className="usP">Hospitalized:</p> {hospitalized.toLocaleString()}
+        </li>
+        <li className="usStatsli">
+          <p className="usP">Deaths:</p> {death}
+        </li>
       </ul>
-      <div className="chart">
-        <Chart stateHistory={stateHistory} />
-        <ChartHospital stateHistory={stateHistory} />
-        <ChartPositive stateHistory={stateHistory} />
+
+      <div className="stateInfoIdx">
+        <StateInfoIndex info={stateInfo} />
       </div>
-      <TwitterFeed handle={stateInfo.twitter} />
-      {/* <NewsIndex news={stateNews}/> */}
+
+      <div className="chartStateDiv">
+        <div className="chart statesCh">
+          <ChartPositive stateHistory={stateHistory} />
+          <Chart stateHistory={stateHistory} />
+          <ChartHospital stateHistory={stateHistory} />
+        </div>
+      </div>
+
+      <div className="stateNewsFeed">
+        <TwitterFeed handle={stateInfo.twitter} />
+        {/* <NewsIndex news={stateNews} /> */}
+      </div>
     </div>
   );
 };

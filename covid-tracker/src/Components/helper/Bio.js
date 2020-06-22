@@ -4,7 +4,7 @@ import '../../CSS/Bio.css'
 const Bio = () => {
   return (
     <>
-      <div className="Bio">Bio
+      <div className="bio">Bio
           <p className="bioparagraph">
               <br></br>
               Jovanni Luna
