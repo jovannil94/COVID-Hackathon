@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import HomePage from "./HomePage";
-import TestingSites from "./TestingSites";
+// import HomePage from "./HomePage";
+// import TestingSites from "./TestingSites";
 import "../CSS/NavBar.css";
 import logo from "../Images/ourLogo.png";
+import { Whatsapp, Facebook, Google, Linkedin, Twitter } from 'react-social-sharing'
+
 
 const NavBar = () => {
   return (

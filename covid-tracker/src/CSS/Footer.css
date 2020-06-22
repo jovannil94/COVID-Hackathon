@@ -22,3 +22,10 @@ $vermilion: #d84727ff; => RED-ORANGE
   color: #4292D9;
   text-decoration: none;
 }
+
+.shareSocial{
+  display: flex;
+  flex-direction: row;
+  height: 30%;
+  width: auto;
+}
