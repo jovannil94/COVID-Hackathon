@@ -17,6 +17,7 @@ const Chart = ({ stateHistory }) => {
       deathsArr.push(object.death);
     }
   };
+
   useEffect(() => {
     getChartInfo();
     setChartData({
@@ -28,6 +29,7 @@ const Chart = ({ stateHistory }) => {
           data: deathsArr.reverse(),
         },
       ],
+      
     });
   }, [stateHistory]);
 

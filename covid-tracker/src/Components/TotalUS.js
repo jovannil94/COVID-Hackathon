@@ -26,7 +26,7 @@ const TotalUS = ({ fetchState }) => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey5}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey6}`
       );
       let resUSTotals = await axios.get(
         `https://covidtracking.com/api/v1/us/daily.json`
@@ -43,8 +43,8 @@ const TotalUS = ({ fetchState }) => {
 
   const info = totals.map((el, i) => {
     return (
-      <div className="usTotalsDiv" key={i}>
-        <h1 className="usStatsli">Current US Totals</h1>
+      <div className="info" key={i}>
+        <h1 className="usStatsli">US Totals</h1>
         <li className="usStatsli">
           <p className="usP">Date:</p> {el.date}
         </li>
@@ -73,23 +73,21 @@ const TotalUS = ({ fetchState }) => {
 
   return (
     <div className="UStotalsMap">
-      <div className="info">
-        <ul>{info}</ul>
-      </div>
+      <ul className="usUl">{info}</ul>
       <div className="chartMapContainer">
         <div className="chartDivwith3">
-          <ChartUsHospitalizations usHistory={usHistory} />
           <ChartUsPositive usHistory={usHistory} />
           <ChartUsDeaths usHistory={usHistory} />
+          <ChartUsHospitalizations usHistory={usHistory} />
         </div>
         <div className="interactiveMap">
-          <p className="headerMap">Click on a State for more information</p>
+          <p className="headerMap">Click on a State for details</p>
           <MapChart fetchState={fetchState} />
         </div>
       </div>
       <div className="usFeedNews">
-        <NewsIndex news={usNews} />
         <TwitterFeed handle={"@CDCgov"} />
+        {/* <NewsIndex news={usNews} /> */}
       </div>
     </div>
   );

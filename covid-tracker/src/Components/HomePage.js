@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import TotalUS from "./TotalUS";
-import StatesSearch from "./StatesSearch";
-import ourLogo from "../Images/ourLogo.png";
+// import ourLogo from "../Images/ourLogo.png";
 import "../CSS/HomePage.css";
 
 const HomePage = () => {
@@ -16,10 +15,7 @@ const HomePage = () => {
   return (
     <>
       <div className="homeDivMain">
-        <h1 className="header">
-          Get the latest US Covid information in the US
-        </h1>
-        {/* <img src={ourLogo} alt="logo" /> */}
+        <h1 className="header">Get The Latest US Covid Information</h1>
         <TotalUS fetchState={fetchState} />
       </div>
     </>

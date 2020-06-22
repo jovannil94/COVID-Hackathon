@@ -17,7 +17,7 @@ className="binfo"
   box-shadow: 1px 3px 3px 1px #cdedf6ff;
   width: min-content;
   margin-bottom: 5em;
-  border: 1px solid #ef7b45ff;
+  /* border: 1px solid #ef7b45ff; */
   cursor: pointer;
   text-align: start;
   background-color: white;

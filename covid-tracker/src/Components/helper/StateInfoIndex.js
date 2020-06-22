@@ -1,11 +1,12 @@
 import React from "react";
+import "../../CSS/StateInfo.css";
 
 const StateInfoIndex = ({ info }) => {
   return (
-    <div>
-      <ul>
+    <>
+      <ul className="stateInfoUl">
         <li>
-          <h1>{info.name}</h1>
+          <h1 className="stateName">{info.name}</h1>
         </li>
         Websites:
         <li onClick={() => window.open(`${info.covid19Site}`)}>
@@ -15,11 +16,11 @@ const StateInfoIndex = ({ info }) => {
           {info.covid19SiteSecondary}
         </li>
         <details>
-        <summary>Sources</summary>
+          <summary>Sources</summary>
           <p>{info.notes}</p>
         </details>
       </ul>
-    </div>
+    </>
   );
 };
 

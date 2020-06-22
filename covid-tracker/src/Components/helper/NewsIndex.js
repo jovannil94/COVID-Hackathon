@@ -4,11 +4,11 @@ import "../../CSS/NewsIndex.css"
 const NewsIndex = ({news}) => {
     return(
         <div className="newsIndexMainDiv">
-            <ul>
+            <ul >
                 {news.map((article, key) => (
-                    <div className="newsDivEach" key={key}>
+                    <div className="newsDivEach" key={key} onClick = {() => window.open(`${article.url}`)}>
                         <li><h3>Title: {article.title}</h3></li>
-                        <li className="link" onClick = {() => window.open(`${article.url}`)}><b>Link:</b> {article.url}</li>
+                        {/* <li className="link" onClick = {() => window.open(`${article.url}`)}><b>Link:</b> {article.url}</li> */}
                         <p>{article.description}</p>
                         <li><img className="articleImage" src={article.image} alt=""/></li>
                     </div>

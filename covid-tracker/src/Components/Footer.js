@@ -16,7 +16,7 @@ const Footer = () => {
         <NavLink className="navBarLinksFooter" exact to={"/about"}>
           About COVIDNearUS™
         </NavLink>
-        <NavLink className="navBarLinksFooter" to={"/bio"}>
+        <NavLink className="navBarLinksFooter" exact to={"/bio"}>
           Meet the Team
         </NavLink>
         <div className="shareSocial">
