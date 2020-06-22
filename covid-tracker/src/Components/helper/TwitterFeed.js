@@ -12,12 +12,14 @@ const TwitterFeed = ({ handle }) => {
 
   return (
     <div>
+
       {twitterName !== undefined ? (
         <TwitterTimelineEmbed
           sourceType="profile"
           screenName={twitterName}
           key={twitterName}
-          options={{ height: 600, width: 900}}
+          noHeader
+          options={{ height: 600, width: 600 }}
         />
       ) : null}
     </div>

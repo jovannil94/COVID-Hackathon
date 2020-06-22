@@ -4,20 +4,24 @@
   color: #042a2bff;
   text-shadow: 1px 1px 1px #cdedf6ff;
   width: max-content;
-  padding-bottom: 1em;
 }
 
 .stateInfoIdx {
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
+
   width: min-content;
   height: auto;
   text-align: initial;
   color: rgba(32, 87, 87, 0.664);
-  padding-left: 14em;
-  padding-right: 14em;
-margin-top: 2em;
+  padding-left: 8em;
+  margin-top: 2em;
+}
+
+.stateInfoUl {
+  margin: auto;
+  /* display: flex; */
+padding-bottom: 1em;
 }
 
 .stateInfoUl > li {
@@ -29,11 +33,23 @@ margin-top: 2em;
   cursor: pointer;
 }
 
-.websites{
-  color:blue;
+.websites {
+  color: blue;
 }
 
-.websites:hover{
+.websites:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.statePic {
+  width: 150%;
+  height: auto;
+  padding-bottom: 2em;
+}
+
+.govtsites {
+  font-size: large;
+  color: #042a2bff;
+  padding-bottom: 5px;
 }
