@@ -103,7 +103,7 @@ const TotalUS = ({ fetchState }) => {
           <TwitterFeed handle={"@CDCgov"} />
         </div>
         <div className="twitter">
-          <p className="titleTwit">Twitter</p>
+          <p className="titleTwit">News</p>
           <NewsIndex news={usNews} />
         </div>
       </div>

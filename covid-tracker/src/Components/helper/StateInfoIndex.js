@@ -9,7 +9,7 @@ const StateInfoIndex = ({ info, statePic }) => {
         <li>
           <h1 className="stateName">{info.name}</h1>
         </li>
-        <img className="statePic" src={statePic} alt="state image" />
+        <img className="statePic" src={statePic} alt="state image" width="500"/>
         <p className="govtsites">Official Government Websites:</p>
 
         <li

@@ -17,7 +17,7 @@ const TestingSitesIndex = ({ sites }) => {
                 )
               }
             >
-              <p className="binfo">
+              <p className="link">
                 {" "}
                 {site.address.houseNumber} {site.address.street},{" "}
                 {site.address.city}, {site.address.state}{" "}

@@ -30,7 +30,7 @@ const TestingSites = () => {
     let long = e.lng.toFixed(2);
     try {
       let res = await axios.get(
-        `https://discover.search.hereapi.com/v1/discover?apikey=wMLSavWgc02TqKDUC9wfuGEZZ8rP2TCBklwSN9J6h4Y&q=Covid&at=${lat},${long}&limit=5`
+        `https://discover.search.hereapi.com/v1/discover?apikey=wMLSavWgc02TqKDUC9wfuGEZZ8rP2TCBklwSN9J6h4Y&q=Covid&at=${lat},${long}&limit=3`
       );
       setTesting(res.data.items);
     } catch (error) {
@@ -47,7 +47,11 @@ const TestingSites = () => {
             <label>Enter US address or zip code</label>
             <input id="addressInput" type="text" {...address} />
           </div>
-          <input id="searchSubmitBtn" type="submit" value="Search for Testing Sites" />
+          <input
+            id="searchSubmitBtn"
+            type="submit"
+            value="Search for Testing Sites"
+          />
         </form>
         <div>
           <TestingSitesIndex sites={testing} />
