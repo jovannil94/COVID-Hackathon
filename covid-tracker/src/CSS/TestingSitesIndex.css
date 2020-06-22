@@ -49,3 +49,12 @@ className="binfo"
   font-weight: bold;
   padding-bottom: 5px;
 }
+
+.link{
+  color: blue;
+}
+
+.link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}

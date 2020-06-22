@@ -18,3 +18,12 @@
   width: 100%;
   height: auto;
 }
+
+.link{
+  color: blue;
+}
+
+.link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
