@@ -4,6 +4,7 @@
   color: #042a2bff;
   text-shadow: 1px 1px 1px #cdedf6ff;
   width: max-content;
+  padding-bottom: 1em;
 }
 
 .stateInfoIdx {
@@ -20,6 +21,10 @@ margin-top: 2em;
 }
 
 .stateInfoUl > li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20%;
   padding-bottom: 1em;
   cursor: pointer;
 }
