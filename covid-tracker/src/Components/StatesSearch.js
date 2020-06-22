@@ -27,6 +27,22 @@ const StatesSearch = () => {
   const [stateNews, setStateNews] = useState([]);
   const [stateInfo, setStateInfo] = useState([]);
 
+  const [statePic, setStatePic] = useState("");
+
+    const getPic = (data) => {
+
+      data.map((state, i) => {
+        if (chosen === state.code) {
+          setStatePic(state.landscape_background_url)
+        }
+      })
+
+    }
+  
+     
+      // debugger
+   
+
   const fetchData = async (state) => {
     let chosenStateLC = state.toLowerCase();
     let chosenState = state;
@@ -35,7 +51,7 @@ const StatesSearch = () => {
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=2&token=${APIKey}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=2&token=${APIKey2}`
       );
 
       let resStateHistory = await axios.get(
@@ -44,6 +60,13 @@ const StatesSearch = () => {
       let resStateInfo = await axios.get(
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/info.json`
       );
+
+      let resStatePic = await axios.get(
+        "https://civilserviceusa.github.io/us-states/data/states.json"
+      );
+      
+      getPic(resStatePic.data)
+      
       setPositive(resStateCurrent.data.positive.toLocaleString());
       setRecovered(resStateCurrent.data.recovered.toLocaleString());
       setDeaths(resStateCurrent.data.death.toLocaleString());
@@ -81,7 +104,7 @@ const StatesSearch = () => {
       </ul>
 
       <div className="stateInfoIdx">
-        <StateInfoIndex info={stateInfo} />
+        <StateInfoIndex statePic={statePic} info={stateInfo} />
       </div>
 
       <div className="chartStateDiv">
