@@ -7,15 +7,16 @@
 }
 
 .stateInfoIdx {
-  display: flex;
-  flex-direction: row;
-
-  width: min-content;
-  height: auto;
-  text-align: initial;
-  color: rgba(32, 87, 87, 0.664);
-  padding-left: 8em;
-  margin-top: 2em;
+ 
+    display: flex;
+    flex-direction: row;
+    width: min-content;
+    height: auto;
+    text-align: initial;
+    color: rgba(32, 87, 87, 0.664);
+    padding-left: 8em;
+    margin-top: 2em;
+  
 }
 
 .stateInfoUl {
@@ -43,7 +44,7 @@ padding-bottom: 1em;
 }
 
 .statePic {
-  /* width: 150%; */
+  
   height: auto;
   padding-bottom: 2em;
 }
@@ -52,4 +53,8 @@ padding-bottom: 1em;
   font-size: large;
   color: #042a2bff;
   padding-bottom: 5px;
+}
+
+.webContainer {
+ padding: 5px 10px 5px 0px;
 }
