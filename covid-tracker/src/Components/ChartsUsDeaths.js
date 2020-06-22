@@ -20,7 +20,7 @@ const ChartUsDeaths = ({ usHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Total Deaths This Month",
+          label: "US Deaths This Month",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
           data: deathArr.reverse(),
         },

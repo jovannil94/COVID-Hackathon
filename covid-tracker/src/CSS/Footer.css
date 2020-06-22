@@ -19,13 +19,19 @@ $vermilion: #d84727ff; => RED-ORANGE
   background-color: rgb(127, 213, 236);
   align-items: center;
   height: 50px;
-  color: #4292D9;
+  color: #f6f6f6;
   text-decoration: none;
+  text-shadow: 1px 1px 2px #4292d9;
 }
 
-.shareSocial{
+.shareSocial {
   display: flex;
   flex-direction: row;
   height: 30%;
   width: auto;
+}
+
+.navBarLinksFooter {
+  text-shadow: 1px 1px 2px #4292d9;
+  color: #f6f6f6;
 }

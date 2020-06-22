@@ -16,6 +16,8 @@ const StatesSearch = () => {
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
   let APIKey4 = "18fdea09268d21bac23da246c878d7af";
+  let APIKey5 = "4a58e4dd760a890ec9da8ec1ba6f5270";
+  let APIKey6 = "f173bb743037755f0aab662d21239731";
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
   const [recovered, setRecovered] = useState([]);
@@ -33,7 +35,7 @@ const StatesSearch = () => {
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey4}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=1&token=${APIKey5}`
       );
 
       let resStateHistory = await axios.get(
@@ -62,20 +64,26 @@ const StatesSearch = () => {
 
   return (
     <div className="stateSearchMainDiv">
-      <StateInfoIndex info={stateInfo} />
-      <ul>
-        <li>Positive: {positive}</li>
-        <li>Recovered: {recovered}</li>
-        <li>Hospitalized: {hospitalized.toLocaleString()}</li>
-        <li>Death: {death}</li>
-      </ul>
-      <div className="chart">
-        <Chart stateHistory={stateHistory} />
-        <ChartHospital stateHistory={stateHistory} />
-        <ChartPositive stateHistory={stateHistory} />
+      <div className="stateNumbers">
+        <ul>
+          <li>Positive: {positive}</li>
+          <li>Recovered: {recovered}</li>
+          <li>Hospitalized: {hospitalized.toLocaleString()}</li>
+          <li>Death: {death}</li>
+        </ul>
       </div>
-      <TwitterFeed handle={stateInfo.twitter} />
-      {/* <NewsIndex news={stateNews}/> */}
+      <div className="chartStateDiv">
+        <StateInfoIndex info={stateInfo} />
+        <div className="chart">
+          <Chart stateHistory={stateHistory} />
+          <ChartHospital stateHistory={stateHistory} />
+          <ChartPositive stateHistory={stateHistory} />
+        </div>
+      </div>
+      <div className="stateNewsFeed">
+        <TwitterFeed handle={stateInfo.twitter} />
+        <NewsIndex news={stateNews}/>
+      </div>
     </div>
   );
 };

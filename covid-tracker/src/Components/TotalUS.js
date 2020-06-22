@@ -13,6 +13,9 @@ const TotalUS = ({ fetchState }) => {
   let APIKey2 = "742e2d633e526b44485af3140a00513e";
   let APIKey3 = "c6cc132ae68d6116df690f260d4dcab0";
   let APIKey4 = "18fdea09268d21bac23da246c878d7af";
+  let APIKey5 = "4a58e4dd760a890ec9da8ec1ba6f5270";
+  let APIKey6 = "f173bb743037755f0aab662d21239731";
+
   const [totals, setTotals] = useState([]);
   const [usNews, setUsNews] = useState([]);
   const [usHistory, setUsHistory] = useState([]);
@@ -23,7 +26,7 @@ const TotalUS = ({ fetchState }) => {
         `https://covidtracking.com/api/v1/us/current.json`
       );
       let resUSNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=5&token=${APIKey4}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=1&token=${APIKey5}`
       );
       let resUSTotals = await axios.get(
         `https://covidtracking.com/api/v1/us/daily.json`
@@ -73,16 +76,19 @@ const TotalUS = ({ fetchState }) => {
       <div className="info">
         <ul>{info}</ul>
       </div>
-      <div>
-        <ChartUsHospitalizations usHistory={usHistory} />
-        <ChartUsPositive usHistory={usHistory} />
-        <ChartUsDeaths usHistory={usHistory} />
-      </div>
-      <div className="interactiveMap">
-        <MapChart fetchState={fetchState} />
+      <div className="chartMapContainer">
+        <div className="chartDivwith3">
+          <ChartUsHospitalizations usHistory={usHistory} />
+          <ChartUsPositive usHistory={usHistory} />
+          <ChartUsDeaths usHistory={usHistory} />
+        </div>
+        <div className="interactiveMap">
+          <p className="headerMap">Click on a State for more information</p>
+          <MapChart fetchState={fetchState} />
+        </div>
       </div>
       <div className="usFeedNews">
-        {/* <NewsIndex news={usNews}/> */}
+        <NewsIndex news={usNews} />
         <TwitterFeed handle={"@CDCgov"} />
       </div>
     </div>

@@ -20,7 +20,7 @@ const ChartUsPositive = ({ usHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Total Positive Cases This Month",
+          label: "US Positive Cases This Month",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
           data: positiveArr.reverse(),
         },

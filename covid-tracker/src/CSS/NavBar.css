@@ -7,6 +7,7 @@ $mandarin: #ef7b45ff; => ORANGE
 $vermilion: #d84727ff; => RED-ORANGE
 */
 
+
 .navNarnav {
   display: flex;
   padding-left: 5em;
@@ -35,4 +36,6 @@ $vermilion: #d84727ff; => RED-ORANGE
   padding: 2em;
   padding-left: 3em;
   font-size: 14pt;
+  color: #f6f6f6;
+  text-shadow: 1px 1px 2px #4292D9;
 }

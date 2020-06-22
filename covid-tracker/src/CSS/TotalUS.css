@@ -8,30 +8,15 @@ $vermilion: #d84727ff; => RED-ORANGE
 */
 
 .UStotalsMap {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2em 6em 6em 6em;
-  
-  /* width: 100vw; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: min-content;
 }
 
-.usFeedNews {
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-  overflow: scroll;
-}
 
-.usTotalsDiv {
-  border: 1px #ef7b45ff solid;
-  width: fit-content;
-  padding: 2em;
-  margin-left: 2em;
-  background-color: white;
-  box-shadow: 3px 3px 3px #4292d9;
-}
 
 .usP {
   font-weight: 550;
@@ -53,7 +38,35 @@ $vermilion: #d84727ff; => RED-ORANGE
   width: 100%;
 }
 
-.interactiveMap{
-  width: 50%;
+.interactiveMap {
+  width: 75%;
   height: auto;
+  margin: auto;
+}
+
+.chartMapContainer {
+  grid-area: 1 / 2 / 4 / 3;
+  height: min-content;
+}
+
+.usFeedNews {
+  grid-area: 4 / 1 / 7 / 3;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.chartDivwith3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.headerMap {
+  color: #000000;
+  text-shadow: 1px 1px 1px #dddddd;
+  z-index: 5;
+  font-size: larger;
+  margin-top: 3em;
 }

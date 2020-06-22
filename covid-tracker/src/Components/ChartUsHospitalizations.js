@@ -20,7 +20,7 @@ const ChartUsHospitalizations = ({ usHistory }) => {
       labels: date.reverse(),
       datasets: [
         {
-          label: "Total Hospitalizations This Month",
+          label: "US Hospitalizations This Month",
           backgroundColor: ["rgba(75, 192, 192, 0.6)"],
           data: hospitalArr.reverse(),
         },
