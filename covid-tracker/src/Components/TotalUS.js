@@ -56,7 +56,7 @@ const TotalUS = ({ fetchState }) => {
   const info = totals.map((el, i) => {
     return (
       <div className="info" key={i}>
-        <h1 className="usStatsli">US Totals</h1>
+        <h1 className="totalsH1">US Totals</h1>
         <li className="usStatsli">
           <p className="usP">Updated Data From:</p> {fixDate(el.date)}
         </li>
