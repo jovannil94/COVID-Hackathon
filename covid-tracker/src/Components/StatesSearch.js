@@ -38,10 +38,6 @@ const StatesSearch = () => {
       })
 
     }
-  
-     
-      // debugger
-   
 
   const fetchData = async (state) => {
     let chosenStateLC = state.toLowerCase();
@@ -51,7 +47,7 @@ const StatesSearch = () => {
         `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
       );
       let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=2&token=${APIKey2}`
+        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey7}`
       );
 
       let resStateHistory = await axios.get(
