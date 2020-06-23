@@ -31,9 +31,7 @@ const ChartUsPositive = ({ usHistory }) => {
     for (const object of usHistory) {
       let updatedDate = fixDate(object.date)
       date.push(updatedDate);
-      debugger
       positiveArr.push(reduceToMillions(object.positive));
-      console.log(positiveArr)
     }
   };
 

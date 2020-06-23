@@ -18,6 +18,7 @@ const StatesSearch = () => {
   let APIKey5 = "4a58e4dd760a890ec9da8ec1ba6f5270";
   let APIKey6 = "f173bb743037755f0aab662d21239731";
   let APIKey7 = "c2061abca4fd3ab0e746b0f2ff238506";
+  let apiKeys = [APIKey, APIKey2, APIKey3, APIKey3, APIKey4, APIKey5, APIKey6, APIKey7];
 
   const [stateHistory, setStateHistory] = useState([]);
   const [positive, setPositive] = useState([]);
@@ -26,6 +27,18 @@ const StatesSearch = () => {
   const [hospitalized, setHospitalized] = useState([]);
   const [stateNews, setStateNews] = useState([]);
   const [stateInfo, setStateInfo] = useState([]);
+
+  const apiRotation = async(arr, chosenState)=>{
+    let objectData
+    for(let i=0; i<arr.length; i++){
+      let token = arr[i]
+      let resStateNews = await axios.get(`https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=3&token=${token}`);
+      if(resStateNews !== undefined){
+        objectData = resStateNews.data.articles
+        return setStateNews(objectData)
+      }
+    }
+  }
 
   const [statePic, setStatePic] = useState("");
 
@@ -43,33 +56,18 @@ const StatesSearch = () => {
     let chosenStateLC = state.toLowerCase();
     let chosenState = state;
     try {
-      let resStateCurrent = await axios.get(
-        `https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`
-      );
-      let resStateNews = await axios.get(
-        `https://gnews.io/api/v3/search?q=coronavirus+gov+${chosenState}&max=5&token=${APIKey7}`
-      );
-
-      let resStateHistory = await axios.get(
-        `https://covidtracking.com/api/v1/states/${chosenStateLC}/daily.json`
-      );
-      let resStateInfo = await axios.get(
-        `https://covidtracking.com/api/v1/states/${chosenStateLC}/info.json`
-      );
-
-      let resStatePic = await axios.get(
-        "https://civilserviceusa.github.io/us-states/data/states.json"
-      );
-      
+      let resStateCurrent = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`);
+      let resStateHistory = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/daily.json`);
+      let resStateInfo = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/info.json`);
+      let resStatePic = await axios.get("https://civilserviceusa.github.io/us-states/data/states.json");
       getPic(resStatePic.data)
-      
       setPositive(resStateCurrent.data.positive.toLocaleString());
       setRecovered(resStateCurrent.data.recovered.toLocaleString());
       setDeaths(resStateCurrent.data.death.toLocaleString());
       setHospitalized(resStateCurrent.data.hospitalized.toLocaleString());
-      setStateNews(resStateNews.data.articles);
       setStateHistory(resStateHistory.data.slice(0, 30));
       setStateInfo(resStateInfo.data);
+      apiRotation(apiKeys, chosenState);
     } catch (error) {
       console.log(error);
     }
