@@ -61,13 +61,14 @@ const StatesSearch = () => {
       let resStateInfo = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/info.json`);
       let resStatePic = await axios.get("https://civilserviceusa.github.io/us-states/data/states.json");
       getPic(resStatePic.data)
+      debugger
+      setStateHistory(resStateHistory.data.slice(0, 30));
+      setStateInfo(resStateInfo.data);
+      apiRotation(apiKeys, chosenState);
       setPositive(resStateCurrent.data.positive.toLocaleString());
       setRecovered(resStateCurrent.data.recovered.toLocaleString());
       setDeaths(resStateCurrent.data.death.toLocaleString());
       setHospitalized(resStateCurrent.data.hospitalized.toLocaleString());
-      setStateHistory(resStateHistory.data.slice(0, 30));
-      setStateInfo(resStateInfo.data);
-      apiRotation(apiKeys, chosenState);
     } catch (error) {
       console.log(error);
     }
