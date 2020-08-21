@@ -36,8 +36,8 @@ const TotalUS = ({ fetchState }) => {
 
   const getTotals = async () => {
     try {
-      let resCurrentUS = await axios.get(`https://covidtracking.com/api/v1/us/current.json`);
-      let resUSTotals = await axios.get(`https://covidtracking.com/api/v1/us/daily.json`);
+      let resUSTotals = await axios.get(`https://api.covidtracking.com/v1/us/daily.json`);
+      let resCurrentUS = await axios.get(`https://api.covidtracking.com/v1/us/current.json`);
       setUsHistory(resUSTotals.data.slice(0, 30));
       setTotals(resCurrentUS.data);
       apiRotation(apiKeys);

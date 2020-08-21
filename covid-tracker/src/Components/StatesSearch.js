@@ -56,12 +56,11 @@ const StatesSearch = () => {
     let chosenStateLC = state.toLowerCase();
     let chosenState = state;
     try {
-      let resStateCurrent = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/current.json`);
-      let resStateHistory = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/daily.json`);
-      let resStateInfo = await axios.get(`https://covidtracking.com/api/v1/states/${chosenStateLC}/info.json`);
+      let resStateCurrent = await axios.get(`https://api.covidtracking.com/v1/states/${chosenStateLC}/current.json`);
+      let resStateHistory = await axios.get(`https://api.covidtracking.com/v1/states/${chosenStateLC}/daily.json`);
+      let resStateInfo = await axios.get(`https://api.covidtracking.com/v1/states/${chosenStateLC}/info.json`);
       let resStatePic = await axios.get("https://civilserviceusa.github.io/us-states/data/states.json");
       getPic(resStatePic.data)
-      debugger
       setStateHistory(resStateHistory.data.slice(0, 30));
       setStateInfo(resStateInfo.data);
       apiRotation(apiKeys, chosenState);
