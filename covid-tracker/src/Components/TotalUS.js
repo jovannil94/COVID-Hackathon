@@ -27,6 +27,7 @@ const TotalUS = ({ fetchState }) => {
     for(let i=0; i<arr.length; i++){
       let token = arr[i]
       let resUSNews = await axios.get(`https://gnews.io/api/v3/search?q=coronavirus+gov+US&max=3&token=${token}`);
+      debugger
         if(resUSNews !== undefined){
           objectData = resUSNews.data.articles
           return setUsNews(objectData)
@@ -37,7 +38,8 @@ const TotalUS = ({ fetchState }) => {
   const getTotals = async () => {
     try {
       let resCurrentUS = await axios.get(`https://covidtracking.com/api/v1/us/current.json`);
-      let resUSTotals = await axios.get(`https://covidtracking.com/api/v1/us/daily.json`);
+      let resUSTotals = await axios.get(`https://api.covidtracking.com/v1/us/daily.json`);
+      debugger
       setUsHistory(resUSTotals.data.slice(0, 30));
       setTotals(resCurrentUS.data);
       apiRotation(apiKeys);
@@ -69,7 +71,7 @@ const TotalUS = ({ fetchState }) => {
           {el.positive.toLocaleString()}
         </li>
         <li className="usStatsli">
-          <p className="usP">Recovered:</p> {el.recovered.toLocaleString()}
+          <p className="usP">Recovered:</p> {el.recovered}
         </li>
         <li className="usStatsli">
           <p className="usP">Hospitalized:</p>{" "}
